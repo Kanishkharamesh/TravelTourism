@@ -33,7 +33,7 @@ const GetStarted = () => {
           <img src="https://cdn.pixabay.com/photo/2017/01/20/00/30/maldives-1993704_1280.jpg" alt="Destination 2" />
         </div>
         <div>
-          <img src="" alt="Destination 3" />
+          <img src="https://img.freepik.com/premium-photo/french-polynesia-bora-bora-generative-ai_1237084-83929.jpg?ga=GA1.1.1425240417.1723008179&semt=ais_hybrid" alt="Destination 3" />
         </div>
       </Carousel>
 
