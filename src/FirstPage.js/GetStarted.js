@@ -27,13 +27,13 @@ const GetStarted = () => {
         showIndicators={false}
       >
         <div>
-          <img src="https://pixabay.com/photos/landscape-sea-cliffs-church-rocks-7115513/" alt="Destination 1" />
+          <img src="https://images.pexels.com/photos/18077985/pexels-photo-18077985/free-photo-of-venice-italy-the-grand-canal-the-doge-s-palace-and-the-bell-tower-of-the-basilica-di-san-marco.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Destination 1" />
         </div>
         <div>
-          <img src="https://pixabay.com/photos/maldives-tropics-tropical-1993704/" alt="Destination 2" />
+          <img src="https://cdn.pixabay.com/photo/2017/01/20/00/30/maldives-1993704_1280.jpg" alt="Destination 2" />
         </div>
         <div>
-          <img src="https://pixabay.com/photos/to-stage-surf-breakwater-beach-7345735/" alt="Destination 3" />
+          <img src="" alt="Destination 3" />
         </div>
       </Carousel>
 
