@@ -1,0 +1,78 @@
+/* Main travel page container */
+.travel-page {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Travel logo */
+  .travel-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+  }
+  
+  .travel-logo img {
+    width: 150px;
+    height: auto;
+  }
+  
+  /* Auth buttons (login, signup) */
+  .travel-auth-buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+  }
+  
+  .travel-login-btn, .travel-signup-btn {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #333;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .travel-login-btn:hover, .travel-signup-btn:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Carousel styling */
+  .travel-carousel img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
+  
+  /* Get Started button */
+  .travel-getstarted-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+  
+  .travel-getstarted-btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .travel-getstarted-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
