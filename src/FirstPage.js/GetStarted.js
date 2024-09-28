@@ -14,7 +14,7 @@ import {
   FaTaxi,
   FaMoneyCheckAlt,
   FaShieldAlt,
-} from 'react-icons/fa'; // Importing Font Awesome icons
+} from 'react-icons/fa';
 
 const GetStarted = () => {
   const [tripType, setTripType] = useState('oneWay');
@@ -81,8 +81,13 @@ const GetStarted = () => {
               <option value="FR">FR</option>
               <option value="DE">DE</option>
             </select>
-            <button className="travel-login-btn">Login</button>
-            <button className="travel-signup-btn">Sign Up</button>
+            <button className="travel-login-btn">
+              Login
+            </button>
+
+            <button className="travel-signup-btn">
+              Sign Up
+            </button>
           </div>
         </div>
       </nav>
