@@ -77,11 +77,11 @@
   letter-spacing: 1px;
 }
 
-/* Navigation Links */
+
 .travel-navbar-center {
   display: flex;
   justify-content: center;
-  gap: 10px; /* Increased gap for better spacing */
+  gap: 10px; 
   flex-wrap: wrap;
 }
 
@@ -107,7 +107,7 @@
   background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
 }
 
-/* Right Side Buttons and Selector */
+
 .travel-navbar-right {
   display: flex;
   align-items: center;
@@ -166,10 +166,10 @@
   color: white;
 }
 
-/* Main Content */
+
 .travel-main-content {
   max-width: 1200px;
-  margin: 40px auto 20px auto; /* Adjusted margin to position below fixed header */
+  margin: 40px auto 20px auto; 
   padding: 20px;
   display: flex;
   justify-content: space-between;
