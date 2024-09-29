@@ -57,6 +57,8 @@
 .travel-navbar-left {
   display: flex;
   align-items: center;
+  margin-left: 0;
+  padding-left: 20px;
 }
 
 .travel-logo {
@@ -64,17 +66,18 @@
   align-items: center;
 }
 
-.travel-logo img {
+.travel-logo-img {
   width: 15px;
   height: 15px;
-  margin-right: 10px;
+  margin-right: -200px;
 }
 
 .travel-logo-text {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 700;
   color: var(--primary-color);
   letter-spacing: 1px;
+  margin-right: -220;
 }
 
 
@@ -112,6 +115,10 @@
   display: flex;
   align-items: center;
   gap: 14px;
+  position: absolute; /* Position the container absolutely */
+  right: 20px; /* Move the buttons to the right */
+  top: 50%; /* Center vertically in relation to the nav bar */
+  transform: translateY(-50%);
 }
 
 .travel-language-selector {

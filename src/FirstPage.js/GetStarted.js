@@ -49,8 +49,10 @@ const GetStarted = () => {
           <div className="travel-navbar-container">
             {/* Left Side: Logo */}
             <div className="travel-navbar-left">
-              <div className="travel-logo">
-                <img src="/images/logo.png" alt="TravelPie Logo" />
+              <div className="travel-logo-img">
+                {/*<img src="/images/logo.png" alt="TravelPie Logo" />*/}
+              </div>
+              <div className="travel-logo-text">
                 <span className="travel-logo-text">TravelPie</span>
               </div>
             </div>
@@ -71,7 +73,7 @@ const GetStarted = () => {
               </a>
               <a href="#homestays" className="travel-nav-link">
                 <FaHome className="nav-icon" aria-label="Homestays & Villas Icon" />
-                Homestays & Villas
+                Homestays
               </a>
               <a href="#vacation-packages" className="travel-nav-link">
                 <FaSuitcaseRolling className="nav-icon" aria-label="Vacation Packages Icon" />
@@ -86,10 +88,12 @@ const GetStarted = () => {
                 <FaBus className="nav-icon" aria-label="Bus Icon" />
                 Bus
               </a>
+              <br></br><br></br><br></br><br></br>
               <a href="#cab-taxi" className="travel-nav-link">
                 <FaTaxi className="nav-icon" aria-label="Cab/Taxi Icon" />
                 Cab/Taxi
               </a>
+              <br></br>
               <a href="#money-exchange" className="travel-nav-link">
                 <FaMoneyCheckAlt className="nav-icon" aria-label="Money Exchange Icon" />
                 Money Exchange
@@ -282,20 +286,21 @@ const GetStarted = () => {
                   min="0"
                 />
               </div>
-            </div>
-            <div className="class-selection">
-              <label htmlFor="class">Class</label>
-              <select
-                name="class"
-                id="class"
-                value={travellers.class}
-                onChange={handleTravellerChange}
-              >
-                <option value="Economy">Economy</option>
-                <option value="Premium Economy">Premium Economy</option>
-                <option value="Business">Business</option>
-                <option value="First">First Class</option>
-              </select>
+              <div className="class-selection">
+                <label htmlFor="class">Class</label>
+                <select
+                  name="class"
+                  id="class"
+                  value={travellers.class}
+                  onChange={handleTravellerChange}
+                  >
+                  <option value="Economy"></option>
+                  <option value="Economy">Economy</option>
+                  <option value="Premium Economy">Premium Economy</option>
+                  <option value="Business">Business</option>
+                  <option value="First">First Class</option>
+                </select>
+              </div>
             </div>
           </div>
 
