@@ -73,11 +73,11 @@ const GetStarted = () => {
               </a>
               <a href="#homestays" className="travel-nav-link">
                 <FaHome className="nav-icon" aria-label="Homestays & Villas Icon" />
-                Homestays
+                Villas
               </a>
               <a href="#vacation-packages" className="travel-nav-link">
                 <FaSuitcaseRolling className="nav-icon" aria-label="Vacation Packages Icon" />
-                Vacation Packages
+                Holiday Packages
               </a>
               {/* Merged Additional Links */}
               <a href="#train" className="travel-nav-link">
@@ -88,10 +88,10 @@ const GetStarted = () => {
                 <FaBus className="nav-icon" aria-label="Bus Icon" />
                 Bus
               </a>
-              <br></br><br></br><br></br><br></br>
+              <br></br>
               <a href="#cab-taxi" className="travel-nav-link">
                 <FaTaxi className="nav-icon" aria-label="Cab/Taxi Icon" />
-                Cab/Taxi
+                Cab
               </a>
               <br></br>
               <a href="#money-exchange" className="travel-nav-link">
