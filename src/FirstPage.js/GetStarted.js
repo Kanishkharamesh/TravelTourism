@@ -20,17 +20,16 @@ const GetStarted = () => {
   const [tripType, setTripType] = useState('oneWay');
   const [showReturnDate, setShowReturnDate] = useState(false);
   const [travellers, setTravellers] = useState({
-    adults: 1,
+    adults: 1,      // Set default adults to 1
     children: 0,
     infants: 0,
-    class: 'Economy',
+    class: 'Economy', // Default value set to Economy
   });
 
   const handleTripTypeChange = (e) => {
-    setTripType(e.target.value);
-    if (e.target.value !== 'roundTrip') {
-      setShowReturnDate(false);
-    }
+    const selectedTripType = e.target.value;
+    setTripType(selectedTripType);
+    setShowReturnDate(selectedTripType === 'roundTrip');
   };
 
   const handleTravellerChange = (e) => {
@@ -43,78 +42,82 @@ const GetStarted = () => {
 
   return (
     <div className="travel-page">
-      {/* Top Navigation Bar */}
-      <nav className="travel-navbar">
-        <div className="travel-navbar-container">
-          <div className="travel-navbar-left">
-            <div className="travel-logo">
-              <img src="/images/logo.png" alt="TravelPie Logo" />
-              <span className="travel-logo-text">TravelPie</span>
+      {/* Combined Header Container */}
+      <header className="travel-header">
+        {/* Navigation Bar */}
+        <nav className="travel-navbar">
+          <div className="travel-navbar-container">
+            {/* Left Side: Logo */}
+            <div className="travel-navbar-left">
+              <div className="travel-logo">
+                <img src="/images/logo.png" alt="TravelPie Logo" />
+                <span className="travel-logo-text">TravelPie</span>
+              </div>
+            </div>
+
+            {/* Center: Navigation Links */}
+            <div className="travel-navbar-center">
+              <a href="#destinations" className="travel-nav-link">
+                <FaMapMarkedAlt className="nav-icon" aria-label="Destinations Icon" />
+                Destinations
+              </a>
+              <a href="#flights" className="travel-nav-link">
+                <FaPlane className="nav-icon" aria-label="Flights Icon" />
+                Flights
+              </a>
+              <a href="#hotels" className="travel-nav-link">
+                <FaHotel className="nav-icon" aria-label="Hotels Icon" />
+                Hotels
+              </a>
+              <a href="#homestays" className="travel-nav-link">
+                <FaHome className="nav-icon" aria-label="Homestays & Villas Icon" />
+                Homestays & Villas
+              </a>
+              <a href="#vacation-packages" className="travel-nav-link">
+                <FaSuitcaseRolling className="nav-icon" aria-label="Vacation Packages Icon" />
+                Vacation Packages
+              </a>
+              {/* Merged Additional Links */}
+              <a href="#train" className="travel-nav-link">
+                <FaTrain className="nav-icon" aria-label="Train Icon" />
+                Train
+              </a>
+              <a href="#bus" className="travel-nav-link">
+                <FaBus className="nav-icon" aria-label="Bus Icon" />
+                Bus
+              </a>
+              <a href="#cab-taxi" className="travel-nav-link">
+                <FaTaxi className="nav-icon" aria-label="Cab/Taxi Icon" />
+                Cab/Taxi
+              </a>
+              <a href="#money-exchange" className="travel-nav-link">
+                <FaMoneyCheckAlt className="nav-icon" aria-label="Money Exchange Icon" />
+                Money Exchange
+              </a>
+              <a href="#travel-insurance" className="travel-nav-link">
+                <FaShieldAlt className="nav-icon" aria-label="Travel Insurance Icon" />
+                Travel Insurance
+              </a>
+            </div>
+
+            {/* Right Side: Buttons and Selector */}
+            <div className="travel-navbar-right">
+              <select
+                className="travel-language-selector"
+                defaultValue="EN"
+                aria-label="Language Selector"
+              >
+                <option value="EN">EN</option>
+                <option value="ES">ES</option>
+                <option value="FR">FR</option>
+                <option value="DE">DE</option>
+              </select>
+              <button className="travel-login-btn">Login</button>
+              <button className="travel-signup-btn">Sign Up</button>
             </div>
           </div>
-          <div className="travel-navbar-center">
-            <a href="#destinations" className="travel-nav-link">
-              <FaMapMarkedAlt className="nav-icon" aria-label="Destinations Icon" />
-              Destinations
-            </a>
-            <a href="#flights" className="travel-nav-link">
-              <FaPlane className="nav-icon" aria-label="Flights Icon" />
-              Flights
-            </a>
-            <a href="#hotels" className="travel-nav-link">
-              <FaHotel className="nav-icon" aria-label="Hotels Icon" />
-              Hotels
-            </a>
-            <a href="#homestays" className="travel-nav-link">
-              <FaHome className="nav-icon" aria-label="Homestays & Villas Icon" />
-              Homestays & Villas
-            </a>
-            <a href="#vacation-packages" className="travel-nav-link">
-              <FaSuitcaseRolling className="nav-icon" aria-label="Vacation Packages Icon" />
-              Vacation Packages
-            </a>
-          </div>
-          <div className="travel-navbar-right">
-            <select className="travel-language-selector" defaultValue="EN" aria-label="Language Selector">
-              <option value="EN">EN</option>
-              <option value="ES">ES</option>
-              <option value="FR">FR</option>
-              <option value="DE">DE</option>
-            </select>
-            <button className="travel-login-btn">
-              Login
-            </button>
-
-            <button className="travel-signup-btn">
-              Sign Up
-            </button>
-          </div>
-        </div>
-      </nav>
-
-      {/* Additional Links Container */}
-      <div className="additional-links-container">
-        <a href="#train" className="additional-nav-link">
-          <FaTrain className="nav-icon" aria-label="Train Icon" />
-          Train
-        </a>
-        <a href="#bus" className="additional-nav-link">
-          <FaBus className="nav-icon" aria-label="Bus Icon" />
-          Bus
-        </a>
-        <a href="#cab-taxi" className="additional-nav-link">
-          <FaTaxi className="nav-icon" aria-label="Cab/Taxi Icon" />
-          Cab/Taxi
-        </a>
-        <a href="#money-exchange" className="additional-nav-link">
-          <FaMoneyCheckAlt className="nav-icon" aria-label="Money Exchange Icon" />
-          Money Exchange
-        </a>
-        <a href="#travel-insurance" className="additional-nav-link">
-          <FaShieldAlt className="nav-icon" aria-label="Travel Insurance Icon" />
-          Travel Insurance
-        </a>
-      </div>
+        </nav>
+      </header>
 
       {/* Main Content */}
       <div className="travel-main-content">
@@ -198,7 +201,7 @@ const GetStarted = () => {
       </div>
 
       {/* Booking Form */}
-      {tripType === 'oneWay' && (
+      {(tripType === 'oneWay' || tripType === 'roundTrip') && (
         <div className="travel-booking-form">
           <div className="booking-section">
             <div className="booking-from">
@@ -228,9 +231,9 @@ const GetStarted = () => {
                 <span className="day-info">Sunday</span>
               </div>
             </div>
-            <div className="booking-return">
-              <h4>Return</h4>
-              {showReturnDate && (
+            {showReturnDate && (
+              <div className="booking-return">
+                <h4>Return</h4>
                 <div className="date-picker">
                   <span className="dropdown-icon">▼</span>
                   <div className="date-info">
@@ -239,38 +242,41 @@ const GetStarted = () => {
                   </div>
                   <span className="day-info">Saturday</span>
                 </div>
-              )}
-            </div>
+              </div>
+            )}
           </div>
 
           <div className="traveller-count">
             <h4>Travellers</h4>
             <div className="traveller-inputs">
               <div className="input-group">
-                <label>Adults</label>
+                <label htmlFor="adults">Adults</label>
                 <input
                   type="number"
                   name="adults"
+                  id="adults"
                   value={travellers.adults}
                   onChange={handleTravellerChange}
                   min="1"
                 />
               </div>
               <div className="input-group">
-                <label>Children</label>
+                <label htmlFor="children">Children</label>
                 <input
                   type="number"
                   name="children"
+                  id="children"
                   value={travellers.children}
                   onChange={handleTravellerChange}
                   min="0"
                 />
               </div>
               <div className="input-group">
-                <label>Infants</label>
+                <label htmlFor="infants">Infants</label>
                 <input
                   type="number"
                   name="infants"
+                  id="infants"
                   value={travellers.infants}
                   onChange={handleTravellerChange}
                   min="0"
@@ -286,10 +292,15 @@ const GetStarted = () => {
                 onChange={handleTravellerChange}
               >
                 <option value="Economy">Economy</option>
+                <option value="Premium Economy">Premium Economy</option>
                 <option value="Business">Business</option>
                 <option value="First">First Class</option>
               </select>
             </div>
+          </div>
+
+          <div className="apply-travellers-button">
+            <button className="apply-travellers-btn">Apply</button>
           </div>
         </div>
       )}
