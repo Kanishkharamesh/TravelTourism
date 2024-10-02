@@ -1,5 +1,5 @@
 // src/FirstPage/GetStarted.js
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './GetStarted.css';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -14,22 +14,76 @@ import {
   FaTaxi,
   FaMoneyCheckAlt,
   FaShieldAlt,
+  FaExchangeAlt,
 } from 'react-icons/fa';
+import { IoMdArrowDropdown } from 'react-icons/io';
+
+const airportOptions = [
+  { code: 'DEL', name: 'Delhi Airport, India' },
+  { code: 'BOM', name: 'Mumbai Airport, India' },
+  { code: 'LHR', name: 'London Heathrow, UK' },
+  { code: 'BLR', name: 'Bengaluru International Airport, India' },
+  { code: 'MAA', name: 'Chennai Airport, India' },
+  { code: 'DXB', name: 'Dubai International, UAE' },
+  // Add more airports as needed
+];
 
 const GetStarted = () => {
   const [tripType, setTripType] = useState('oneWay');
   const [showReturnDate, setShowReturnDate] = useState(false);
   const [travellers, setTravellers] = useState({
-    adults: 1,      // Set default adults to 1
+    adults: 1,
     children: 0,
     infants: 0,
-    class: 'Economy', // Default value set to Economy
+    class: 'Economy',
   });
+  const [fromAirport, setFromAirport] = useState('DEL');
+  const [toAirport, setToAirport] = useState('BLR');
+  const [departureDate, setDepartureDate] = useState('');
+  const [returnDate, setReturnDate] = useState('');
+  const [showTravellerDropdown, setShowTravellerDropdown] = useState(false);
+  const [showDeparturePicker, setShowDeparturePicker] = useState(false);
+  const [showReturnPicker, setShowReturnPicker] = useState(false);
+
+  const travellerRef = useRef();
+  const departureRef = useRef();
+  const returnRef = useRef();
+
+  useEffect(() => {
+    setShowReturnDate(tripType === 'roundTrip');
+    if (tripType !== 'roundTrip') {
+      setReturnDate('');
+    }
+  }, [tripType]);
+
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        travellerRef.current &&
+        !travellerRef.current.contains(event.target)
+      ) {
+        setShowTravellerDropdown(false);
+      }
+      if (
+        departureRef.current &&
+        !departureRef.current.contains(event.target)
+      ) {
+        setShowDeparturePicker(false);
+      }
+      if (returnRef.current && !returnRef.current.contains(event.target)) {
+        setShowReturnPicker(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const handleTripTypeChange = (e) => {
     const selectedTripType = e.target.value;
     setTripType(selectedTripType);
-    setShowReturnDate(selectedTripType === 'roundTrip');
   };
 
   const handleTravellerChange = (e) => {
@@ -39,6 +93,29 @@ const GetStarted = () => {
       [name]: value,
     }));
   };
+
+  const handleSwap = () => {
+    const temp = fromAirport;
+    setFromAirport(toAirport);
+    setToAirport(temp);
+  };
+
+  const handleApplyTravellers = () => {
+    setShowTravellerDropdown(false);
+  };
+
+  const formatDateDisplay = (dateStr) => {
+    if (!dateStr) return '';
+    const date = new Date(dateStr);
+    const day = date.getDate();
+    const month = date.toLocaleString('default', { month: 'short' });
+    const year = date.getFullYear().toString().slice(-2);
+    const weekday = date.toLocaleString('default', { weekday: 'long' });
+    return { day, month, year, weekday };
+  };
+
+  const departureDisplay = formatDateDisplay(departureDate);
+  const returnDisplay = formatDateDisplay(returnDate);
 
   return (
     <div className="travel-page">
@@ -50,7 +127,7 @@ const GetStarted = () => {
             {/* Left Side: Logo */}
             <div className="travel-navbar-left">
               <div className="travel-logo-img">
-                {/*<img src="/images/logo.png" alt="TravelPie Logo" />*/}
+                {/* <img src="/images/logo.png" alt="TravelPie Logo" /> */}
               </div>
               <div className="travel-logo-text">
                 <span className="travel-logo-text">TravelPie</span>
@@ -60,11 +137,17 @@ const GetStarted = () => {
             {/* Center: Navigation Links */}
             <div className="travel-navbar-center">
               <a href="#destinations" className="travel-nav-link">
-                <FaMapMarkedAlt className="nav-icon" aria-label="Destinations Icon" />
+                <FaMapMarkedAlt
+                  className="nav-icon"
+                  aria-label="Destinations Icon"
+                />
                 Destinations
               </a>
               <a href="#flights" className="travel-nav-link">
-                <FaPlane className="nav-icon" aria-label="Flights Icon" />
+                <FaPlane
+                  className="nav-icon"
+                  aria-label="Flights Icon"
+                />
                 Flights
               </a>
               <a href="#hotels" className="travel-nav-link">
@@ -72,11 +155,17 @@ const GetStarted = () => {
                 Hotels
               </a>
               <a href="#homestays" className="travel-nav-link">
-                <FaHome className="nav-icon" aria-label="Homestays & Villas Icon" />
+                <FaHome
+                  className="nav-icon"
+                  aria-label="Homestays & Villas Icon"
+                />
                 Villas
               </a>
               <a href="#vacation-packages" className="travel-nav-link">
-                <FaSuitcaseRolling className="nav-icon" aria-label="Vacation Packages Icon" />
+                <FaSuitcaseRolling
+                  className="nav-icon"
+                  aria-label="Vacation Packages Icon"
+                />
                 Holiday Packages
               </a>
               {/* Merged Additional Links */}
@@ -95,11 +184,17 @@ const GetStarted = () => {
               </a>
               <br></br>
               <a href="#money-exchange" className="travel-nav-link">
-                <FaMoneyCheckAlt className="nav-icon" aria-label="Money Exchange Icon" />
+                <FaMoneyCheckAlt
+                  className="nav-icon"
+                  aria-label="Money Exchange Icon"
+                />
                 Money Exchange
               </a>
               <a href="#travel-insurance" className="travel-nav-link">
-                <FaShieldAlt className="nav-icon" aria-label="Travel Insurance Icon" />
+                <FaShieldAlt
+                  className="nav-icon"
+                  aria-label="Travel Insurance Icon"
+                />
                 Travel Insurance
               </a>
             </div>
@@ -127,10 +222,14 @@ const GetStarted = () => {
       <div className="travel-main-content">
         <div className="travel-text-section">
           <p className="travel-subtitle">BEST DESTINATIONS AROUND THE WORLD</p>
-          <h1 className="travel-title">Travel, enjoy and live a new and full life</h1>
+          <h1 className="travel-title">
+            Travel, enjoy and live a new and full life
+          </h1>
           <p className="travel-description">
-            Travelers find joy in exploring new places, experiencing different cultures, and discovering hidden beauty.
-            Whether it’s relaxing by the beach or walking through vibrant cities, every journey offers something unique and exciting.
+            Travelers find joy in exploring new places, experiencing different
+            cultures, and discovering hidden beauty. Whether it’s relaxing by
+            the beach or walking through vibrant cities, every journey offers
+            something unique and exciting.
           </p>
           <button className="travel-findout-btn">Find out more</button>
         </div>
@@ -205,110 +304,234 @@ const GetStarted = () => {
       </div>
 
       {/* Booking Form */}
-      {(tripType === 'oneWay' || tripType === 'roundTrip') && (
+      <div className="travel-booking-container">
         <div className="travel-booking-form">
-          <div className="booking-section">
-            <div className="booking-from">
+          <div className="booking-row">
+            {/* From Section */}
+            <div className="booking-column">
               <h3>From</h3>
-              <p className="city-name">Delhi</p>
-              <p className="airport-code">DEL, Delhi Airport India</p>
-            </div>
-            <div className="bidirectional-logo">
-              <span className="arrow-icon">⇄</span>
-            </div>
-            <div className="booking-to">
-              <h3>To</h3>
-              <p className="city-name">Bengaluru</p>
-              <p className="airport-code">BLR, Bengaluru International Airport India</p>
-            </div>
-          </div>
-
-          <div className="booking-dates">
-            <div className="booking-departure">
-              <h4>Departure</h4>
-              <div className="date-picker">
-                <span className="dropdown-icon">▼</span>
-                <div className="date-info">
-                  <span className="date-number">29</span>
-                  <span className="date-month">Sep'24</span>
-                </div>
-                <span className="day-info">Sunday</span>
-              </div>
-            </div>
-            {showReturnDate && (
-              <div className="booking-return">
-                <h4>Return</h4>
-                <div className="date-picker">
-                  <span className="dropdown-icon">▼</span>
-                  <div className="date-info">
-                    <span className="date-number">05</span>
-                    <span className="date-month">Oct'24</span>
-                  </div>
-                  <span className="day-info">Saturday</span>
-                </div>
-              </div>
-            )}
-          </div>
-
-          <div className="traveller-count">
-            <h4>Travellers</h4>
-            <div className="traveller-inputs">
-              <div className="input-group">
-                <label htmlFor="adults">Adults</label>
-                <input
-                  type="number"
-                  name="adults"
-                  id="adults"
-                  value={travellers.adults}
-                  onChange={handleTravellerChange}
-                  min="1"
-                />
-              </div>
-              <div className="input-group">
-                <label htmlFor="children">Children</label>
-                <input
-                  type="number"
-                  name="children"
-                  id="children"
-                  value={travellers.children}
-                  onChange={handleTravellerChange}
-                  min="0"
-                />
-              </div>
-              <div className="input-group">
-                <label htmlFor="infants">Infants</label>
-                <input
-                  type="number"
-                  name="infants"
-                  id="infants"
-                  value={travellers.infants}
-                  onChange={handleTravellerChange}
-                  min="0"
-                />
-              </div>
-              <div className="class-selection">
-                <label htmlFor="class">Class</label>
+              <div className="booking-location-picker">
+                <strong className="city-name">
+                  {airportOptions.find((a) => a.code === fromAirport)?.code}{' '}
+                  {airportOptions.find((a) => a.code === fromAirport)?.name.split(',')[0]}
+                </strong>
+                <p className="airport-code">
+                  {fromAirport},{' '}
+                  {
+                    airportOptions.find((a) => a.code === fromAirport)?.name
+                  }
+                </p>
                 <select
-                  name="class"
-                  id="class"
-                  value={travellers.class}
-                  onChange={handleTravellerChange}
-                  >
-                  <option value="Economy"></option>
-                  <option value="Economy">Economy</option>
-                  <option value="Premium Economy">Premium Economy</option>
-                  <option value="Business">Business</option>
-                  <option value="First">First Class</option>
+                  value={fromAirport}
+                  onChange={(e) => setFromAirport(e.target.value)}
+                  className="location-dropdown"
+                  aria-label="From Airport"
+                >
+                  {airportOptions.map((airport) => (
+                    <option key={airport.code} value={airport.code}>
+                      {airport.code} - {airport.name}
+                    </option>
+                  ))}
                 </select>
               </div>
             </div>
+
+            {/* Toggle Button */}
+            <div className="booking-column toggle-column">
+              <button
+                className="swap-button"
+                onClick={handleSwap}
+                aria-label="Swap From and To"
+              >
+                <FaExchangeAlt size={24} />
+              </button>
+            </div>
+
+            {/* To Section */}
+            <div className="booking-column">
+              <h3>To</h3>
+              <div className="booking-location-picker">
+                <strong className="city-name">
+                  {airportOptions.find((a) => a.code === toAirport)?.code}{' '}
+                  {airportOptions.find((a) => a.code === toAirport)?.name.split(',')[0]}
+                </strong>
+                <p className="airport-code">
+                  {toAirport},{' '}
+                  {
+                    airportOptions.find((a) => a.code === toAirport)?.name
+                  }
+                </p>
+                <select
+                  value={toAirport}
+                  onChange={(e) => setToAirport(e.target.value)}
+                  className="location-dropdown"
+                  aria-label="To Airport"
+                >
+                  {airportOptions.map((airport) => (
+                    <option key={airport.code} value={airport.code}>
+                      {airport.code} - {airport.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            {/* Departure Date */}
+            <div className="booking-column" ref={departureRef}>
+              <h3>Departure</h3>
+              <div
+                className="date-picker-container"
+                onClick={() => setShowDeparturePicker(!showDeparturePicker)}
+              >
+                <IoMdArrowDropdown className="dropdown-icon" />
+                <div className="date-display">
+                  <span className="date-number">
+                    {departureDisplay.day || 'DD'}
+                  </span>
+                  <span className="date-month">
+                    {departureDisplay.month
+                      ? `${departureDisplay.month}'${departureDisplay.year}`
+                      : 'MMM\'YY'}
+                  </span>
+                </div>
+                <span className="day-info">
+                  {departureDisplay.weekday || 'Day'}
+                </span>
+              </div>
+              {showDeparturePicker && (
+                <input
+                  type="date"
+                  value={departureDate}
+                  onChange={(e) => setDepartureDate(e.target.value)}
+                  className="date-input"
+                />
+              )}
+            </div>
+
+            {/* Return Date (Only for Round Trip) */}
+            {showReturnDate && (
+              <div className="booking-column" ref={returnRef}>
+                <h3>Return</h3>
+                <div
+                  className="date-picker-container"
+                  onClick={() => setShowReturnPicker(!showReturnPicker)}
+                >
+                  <IoMdArrowDropdown className="dropdown-icon" />
+                  <div className="date-display">
+                    <span className="date-number">
+                      {returnDisplay.day || 'DD'}
+                    </span>
+                    <span className="date-month">
+                      {returnDisplay.month
+                        ? `${returnDisplay.month}'${returnDisplay.year}`
+                        : 'MMM\'YY'}
+                    </span>
+                  </div>
+                  <span className="day-info">
+                    {returnDisplay.weekday || 'Day'}
+                  </span>
+                  {returnDate && (
+                    <button
+                      className="cancel-return-btn"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setReturnDate('');
+                      }}
+                      aria-label="Cancel Return Date"
+                    >
+                      &times;
+                    </button>
+                  )}
+                </div>
+                {showReturnPicker && (
+                  <input
+                    type="date"
+                    value={returnDate}
+                    onChange={(e) => setReturnDate(e.target.value)}
+                    className="date-input"
+                  />
+                )}
+              </div>
+            )}
+
+            {/* Traveller and Class Selection */}
+            <div className="booking-column traveller-column" ref={travellerRef}>
+              <h3>Travellers & Class</h3>
+              <div
+                className="traveller-selector"
+                onClick={() => setShowTravellerDropdown(!showTravellerDropdown)}
+              >
+                <IoMdArrowDropdown className="dropdown-icon" />
+                <span className="traveller-text">
+                  {travellers.adults} Adult(s), {travellers.children} Child(ren), {travellers.infants} Infant(s) - {travellers.class}
+                </span>
+              </div>
+              {showTravellerDropdown && (
+                <div className="traveller-dropdown">
+                  <div className="traveller-section">
+                    <label htmlFor="adults">Adults</label>
+                    <input
+                      type="number"
+                      name="adults"
+                      id="adults"
+                      value={travellers.adults}
+                      onChange={handleTravellerChange}
+                      min="1"
+                    />
+                  </div>
+                  <div className="traveller-section">
+                    <label htmlFor="children">Children</label>
+                    <input
+                      type="number"
+                      name="children"
+                      id="children"
+                      value={travellers.children}
+                      onChange={handleTravellerChange}
+                      min="0"
+                    />
+                  </div>
+                  <div className="traveller-section">
+                    <label htmlFor="infants">Infants</label>
+                    <input
+                      type="number"
+                      name="infants"
+                      id="infants"
+                      value={travellers.infants}
+                      onChange={handleTravellerChange}
+                      min="0"
+                    />
+                  </div>
+                  <div className="class-section">
+                    <label htmlFor="class">Class</label>
+                    <select
+                      name="class"
+                      id="class"
+                      value={travellers.class}
+                      onChange={handleTravellerChange}
+                    >
+                      <option value="Economy">Economy</option>
+                      <option value="Premium Economy">Premium Economy</option>
+                      <option value="Business">Business</option>
+                      <option value="First">First Class</option>
+                    </select>
+                  </div>
+                  <button
+                    className="apply-travellers-btn"
+                    onClick={handleApplyTravellers}
+                  >
+                    Apply
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
 
-          <div className="apply-travellers-button">
-            <button className="apply-travellers-btn">Apply</button>
+          {/* Apply Button */}
+          <div className="apply-button-container">
+            <button className="apply-button">Apply</button>
           </div>
         </div>
-      )}
+      </div>
 
       {/* Get Started Button */}
       <div className="get-started-button-container">
