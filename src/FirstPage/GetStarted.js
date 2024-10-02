@@ -32,7 +32,7 @@ const GetStarted = () => {
   const [tripType, setTripType] = useState('oneWay');
   const [showReturnDate, setShowReturnDate] = useState(false);
   const [travellers, setTravellers] = useState({
-    adults: 1,
+    adults: 0,
     children: 0,
     infants: 0,
     class: 'Economy',
