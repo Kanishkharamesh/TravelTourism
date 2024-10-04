@@ -290,6 +290,87 @@ const destinationsData = [
     images: [
     ],
   },
+  {
+    id: 22,
+    name: 'New York City',
+    rank: "#22 in World's Best Places to Visit",
+    description:
+      "New York City hosts infinite urban adventures: You can wander through Central Park, tour art exhibits at The Metropolitan Museum of Art, catch a classic New York Broadway show or peruse SoHo's stylish boutiques. At night, admire Manhattan's glittering skyscrapers from the top of the Empire State Building or the rooftop bar of a trendy boutique hotel. Foodies will also appreciate New York's endless restaurant options and commendable number of Michelin stars. If you want to sample a bit of everything, sign up for a food tour.",
+    images: [
+    ],
+  },
+  {
+    id: 23,
+    name: 'Santorini',
+    rank: "#23 in World's Best Places to Visit",
+    description:
+      "Frequently touted as a top honeymoon destination, Greece's most popular isle woos newlyweds every year with its breathtaking sunsets, whitewashed villages and colorful beaches. Archaeological sites, such as Ancient Thira and the prehistoric Akrotiri, beckon to history buffs, while central Santorini's wine tours lure oenophiles. Work up an appetite by hiking along the rim of the caldera, then head to scenic Amoudi Bay to dine alfresco. Meanwhile, travelers looking for a relaxing daytrip can hop on a boat to the nearby island of Thirassia.",
+    images: [
+    ],
+  },
+  {
+    id: 24,
+    name: 'British Virgin Islands',
+    rank: "#24 in World's Best Places to Visit",
+    description:
+      "If picturesque beaches and warm weather are what you're after, look no further than the British Virgin Islands. For easy access to Smuggler's Cove, Brewers Bay, and other top-notch BVI beaches, consider booking your hotel room on Tortola, the area's largest island. Plus, you can easily hop between the smaller islands on a boat tour. Head to Virgin Gorda to see the must-visit rock formations of The Baths and hike through Gorda Peak National Park, or truly get away from the crowds on the island of Anegada, which offers stretches of secluded white sand beaches.",
+    images: [
+    ],
+  },
+  {
+    id: 25,
+    name: 'Bali',
+    rank: "#25 in World's Best Places to Visit",
+    description:
+      "Serene temples and beautiful beaches are the biggest draws to this lush Indonesian paradise. And we do mean lush – the region's notoriously soggy wet season is best avoided by planning a visit between April and October. Break up your beach time with a visit to the village of Kintamani, home to a towering (and active) volcano, as well as a large lake. If you're craving an adrenaline rush, hop on one of Bali's many swings to soar above rice terraces and jungles. Meanwhile, foodies can whip up some nasi goreng during a Balinese cooking class.",
+    images: [
+    ],
+  },
+  {
+    id: 26,
+    name: 'Tulum',
+    rank: "#26 in World's Best Places to Visit",
+    description:
+      "Consider Tulum if you're longing for an approachable Bohemian beach getaway. This relatively easy-to-reach Mexico hot spot lies nearly 80 miles southwest of Cancún and boasts many sandy, palm-lined beaches, including the popular Playa Paraíso. Beyond its shoreline, Tulum features everything from cerulean swimming holes called cenotes to fascinating Mayan ruins. The true allure of Tulum is its aesthetic, which includes chic boutique hotels, trendy open-air restaurants and yoga lounges under a jungle canopy. Bike down Beach Road to find everything from matcha to fashionable shops.",
+    images: [
+    ],
+  },
+  {
+    id: 27,
+    name: 'Florence',
+    rank: "#27 in World's Best Places to Visit",
+    description:
+      "Florence, Italy, offers numerous world-famous attractions, including the Duomo, Piazzale Michelangelo and Piazza della Signoria. Plus, it's a haven for art lovers thanks to art-focused museums like the Galleria dell'Accademia di Firenze and the Uffizi Gallery. After appreciating this historic Italian city's Renaissance architecture and art, sample some of the region's delectable Tuscan food and wine at Florence's quaint cafes, gelato shops and ristorantes. Then, cross the Ponte Vecchio bridge to get to Italy's acclaimed Palazzo Pitti and the Boboli Gardens, where you'll find fountains, meticulously landscaped green spaces and panoramic views.",
+    images: [
+    ],
+  },
+  {
+    id: 28,
+    name: 'Grand Canyon National Park',
+    rank: "#28 in World's Best Places to Visit",
+    description:
+      "Measuring roughly 277 miles long, 18 miles wide and about a mile deep, the Grand Canyon is brimming with outdoor activities for everyone from day-trippers to adventure junkies. Hike along the national park's popular Rim and Bright Angel trails for unparalleled vistas, cool off with a whitewater rafting excursion down the Colorado River or view the dramatic Arizona landscape from above during a helicopter tour. If you're feeling especially daring, sign up for a skydiving excursion above the canyon.",
+    images: [
+    ],
+  },
+  {
+    id: 29,
+    name: 'Tasmania',
+    rank: "#29 in World's Best Places to Visit",
+    description:
+      "Set your sights on a far-flung adventure down under in Tasmania, Australia's island state located about 150 miles from the mainland. Tassie (as locals call it) is sure to impress with its wildlife (think: Tasmanian devils, fairy penguins and kangaroos) and awe-inspiring scenery, including 19 national parks, such as Cradle Mountain-Lake St Clair National Park and Freycinet National Park. The waterfront cities of Hobart and Launceston also offer stunning settings, plus acclaimed art and gastronomy scenes. Not to mention, the island is home to four wine trails, so you can taste the region's pinot noir and sparkling options no matter where you stay. ",
+    images: [
+    ],
+  },
+  {
+    id: 30,
+    name: 'Rio de Janeiro',
+    rank: "#30 in World's Best Places to Visit",
+    description:
+      "Christ the Redeemer, Sugarloaf Mountain and the shores of Copacabana and Ipanema beaches are just a few reasons why you should plan a trip to Rio. In this mesmerizing Brazilian city, you can revel in the sounds of samba in the Lapa neighborhood after strolling along the cobblestone sidewalks of Santa Teresa. Time your visit for February if you want to experience Carnival, though keep in mind that flights and hotels are expensive when this world-famous celebration takes place. ",
+    images: [
+    ],
+  },
 ];
 
 // Modal Component
