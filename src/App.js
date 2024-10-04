@@ -2,7 +2,8 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import GetStarted from './FirstPage/GetStarted';
-import Destinations from './DestinationsPage/Destinations';
+import Destinations from './TravelNavbar/DestinationsPage/Destinations';
+import Flights from './TravelNavbar/FlightsPage/Flights'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path='/' element={<GetStarted/>}/>
           <Route path="/destinations" element={<Destinations />} />
+          <Route path="/flights" element={<Flights />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -136,61 +136,60 @@ const GetStarted = () => {
 
             {/* Center: Navigation Links */}
             <div className="travel-navbar-center">
-              <a href="#destinations" className="travel-nav-link">
+              <a href="/destinations" className="travel-nav-link">
                 <FaMapMarkedAlt
                   className="nav-icon"
                   aria-label="Destinations Icon"
-                />
+                  />
                 Destinations
               </a>
-              <a href="#flights" className="travel-nav-link">
+              <a href="/flights" className="travel-nav-link">
                 <FaPlane
                   className="nav-icon"
                   aria-label="Flights Icon"
                 />
                 Flights
               </a>
-              <a href="#hotels" className="travel-nav-link">
+              <a href="/hotels" className="travel-nav-link">
                 <FaHotel className="nav-icon" aria-label="Hotels Icon" />
                 Hotels
               </a>
-              <a href="#homestays" className="travel-nav-link">
+              <a href="/homestays" className="travel-nav-link">
                 <FaHome
                   className="nav-icon"
                   aria-label="Homestays & Villas Icon"
                 />
                 Villas
               </a>
-              <a href="#vacation-packages" className="travel-nav-link">
+              <a href="/vacation-packages" className="travel-nav-link">
                 <FaSuitcaseRolling
                   className="nav-icon"
                   aria-label="Vacation Packages Icon"
                 />
                 Holiday Packages
               </a>
-              {/* Merged Additional Links */}
-              <a href="#train" className="travel-nav-link">
+              <a href="/train" className="travel-nav-link">
                 <FaTrain className="nav-icon" aria-label="Train Icon" />
                 Train
               </a>
-              <a href="#bus" className="travel-nav-link">
+              <a href="/bus" className="travel-nav-link">
                 <FaBus className="nav-icon" aria-label="Bus Icon" />
                 Bus
               </a>
               <br></br>
-              <a href="#cab-taxi" className="travel-nav-link">
+              <a href="/cab-taxi" className="travel-nav-link">
                 <FaTaxi className="nav-icon" aria-label="Cab/Taxi Icon" />
                 Cab
               </a>
               <br></br>
-              <a href="#money-exchange" className="travel-nav-link">
+              <a href="/money-exchange" className="travel-nav-link">
                 <FaMoneyCheckAlt
                   className="nav-icon"
                   aria-label="Money Exchange Icon"
                 />
                 Money Exchange
               </a>
-              <a href="#travel-insurance" className="travel-nav-link">
+              <a href="/travel-insurance" className="travel-nav-link">
                 <FaShieldAlt
                   className="nav-icon"
                   aria-label="Travel Insurance Icon"
