@@ -189,6 +189,16 @@ const destinationsData = [
     description:
       "Simply setting foot in Japan's frenetic capital city is an experience. Known for its bustling streets and flashing neon signs, Tokyo has an electric energy and ample top attractions to discover. Foodies won't be let down by Tokyo's fresh sushi and hearty ramen (not to mention more Michelin-starred restaurants than any other city in the world). Shopaholics will find plenty of must-have designer products in Ginza, while those seeking a respite in nature can visit Shinjuku Gyoen or Yoyogi Park. Meanwhile, history buffs will appreciate Tokyo's centuries-old temples and shrines.",
     images: [
+      'https://travel.usnews.com/dims4/USNEWS/da4a14f/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2FTokyo-GettyImages-Jackyenjoyphotography.jpg',
+      'https://travel.usnews.com/dims4/USNEWS/e3bd73c/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2FAsakusa-SeanPavonePhoto-Getty.jpg',
+      'https://travel.usnews.com/dims4/USNEWS/5dee24e/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2FAerial_view-Yukinori_Hasumi-Getty.jpg',
+      'https://travel.usnews.com/dims4/USNEWS/357652d/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2Fhonkan02-National_Museum.jpg',
+      'https://travel.usnews.com/dims4/USNEWS/64c0a6e/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2FTokyo_Station_Square-Torjrtrx-Getty_sFrsb8g.jpg',
+      'https://travel.usnews.com/dims4/USNEWS/18b2dab/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2FTokyo_Tower_at_Night-Eakkawatna-Getty.jpg',
+      'https://travel.usnews.com/dims4/USNEWS/84b20c9/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2FCherry_Blossom-Margarita_Almpanezou-Getty.jpg',
+      'https://travel.usnews.com/dims4/USNEWS/b9d8e78/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2FTokyo_Station_Facade-Torjrtrx-Getty.jpg',
+      'https://travel.usnews.com/dims4/USNEWS/62fa51a/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2Fhonkan_room11-3-national_museum.jpg',
+      'https://travel.usnews.com/dims4/USNEWS/2994e25/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2FGettyImages-503547958.jpg'
     ],
   },
   {
@@ -198,6 +208,16 @@ const destinationsData = [
     description:
       "Located in southern Thailand, the island of Phuket offers something for everyone, especially budget-minded travelers. Activities like spa treatments and boat tours come with low price tags, as do accommodations, making this a cheap tropical vacation option. For stunning scenery, check out the limestone cliffs of Phang Nga Bay and lounge on Phuket's gorgeous white sand beaches (Freedom Beach and Bang Tao Beach are two popular destinations). Other top attractions include Wat Chalong Temple and the Big Buddha. Once the sun sets, hitch a ride on a tuk-tuk and take part in the island's lively nightlife scene. ",
     images: [
+      'https://travel.usnews.com/dims4/USNEWS/977c2bd/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2Fboat_tours_attraction_rhtQ1dy.jpg',
+      'https://travel.usnews.com/dims4/USNEWS/55d7ddb/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2Fmain_image_2017_getty_REDhwov.jpg',
+      'https://travel.usnews.com/dims4/USNEWS/5a151f7/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2Fnai_harn_getty_IYLNqng.jpg',
+      'https://travel.usnews.com/dims4/USNEWS/235d59a/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2Fkata_noi_getty_KczNkIx.jpg',
+      'https://travel.usnews.com/dims4/USNEWS/f40344f/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2Fwat_chalong_getty_NyDm1Ak.jpg',
+      'https://travel.usnews.com/dims4/USNEWS/b28fac2/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2Frailay_viewpoint_getty_gXCj87j.jpg',
+      'https://travel.usnews.com/dims4/USNEWS/9beb99d/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2Fkaron_beach_getty_XeyGtKK.jpg',
+      'https://travel.usnews.com/dims4/USNEWS/bd7f5b9/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2Fphuket_town_getty_izbxVXO.jpg',
+      'https://travel.usnews.com/dims4/USNEWS/e4ace87/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2Fcape_promthep_getty_0WaDOeP.jpg',
+      'https://travel.usnews.com/dims4/USNEWS/e4ace87/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2Fcape_promthep_getty_0WaDOeP.jpg'
     ],
   },
   {
@@ -207,6 +227,14 @@ const destinationsData = [
     description:
       "From volcanic mountains and verdant rainforests to tumbling waterfalls and miles of stunning shoreline, Costa Rica is a Central American gem. Explore the beaches along the Nicoya Peninsula, hike along Arenal Volcano and spot exotic wildlife (think: river turtles, otters and howler monkeys) in remote Tortuguero National Park. If you're looking for an adrenaline rush, go swimming next to some of the country's waterfalls or zip lining through its rainforests. Then, head back to an eco-luxury all-inclusive resort to unwind. Just make sure you plan a visit during Costa Rica's dry season, which falls between mid-December and April. ",
     images: [
+      'https://travel.usnews.com/dims4/USNEWS/220aa39/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2F10b-Cocles_Beach-Credit_Getty_Images.jpg',
+      'https://travel.usnews.com/dims4/USNEWS/1c06f2a/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2F15-Nauyaca_Waterfalls-Credit_Getty_Images.jpg',
+      'https://travel.usnews.com/dims4/USNEWS/f34c0e8/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2F17-Irazu_Volcano-Credit_Getty_Images.jpg',
+      'https://travel.usnews.com/dims4/USNEWS/34bf84e/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2F21-Nosara-Credit_CampPhoto-Getty_Images.jpg',
+      'https://travel.usnews.com/dims4/USNEWS/0d46c56/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2F3-Ecotermales_Hot_Springs-Credit_Getty_Images.jpg',
+      'https://travel.usnews.com/dims4/USNEWS/a6be679/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2F8a-Corcovado_National_Park-Credit_Getty_Images.jpg',
+      'https://travel.usnews.com/dims4/USNEWS/2fddc22/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2F2a-Guanacaste-Credit_Getty_Images.jpg',
+      'https://travel.usnews.com/dims4/USNEWS/3219ac0/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2F1b-Montezuma-Credit_Getty_Images.jpg'
     ],
   },
   {
