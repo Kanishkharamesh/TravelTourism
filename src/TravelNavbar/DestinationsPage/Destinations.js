@@ -182,6 +182,114 @@ const destinationsData = [
       'https://travel.usnews.com/dims4/USNEWS/ae8b865/2147483647/resize/976x652%5E%3E/crop/976x652/quality/85/?url=https%3A%2F%2Ftravel.usnews.com%2Fimages%2Fshipwreck_Getty.jpg'
     ],
   },
+  {
+    id: 10,
+    name: 'Tokyo',
+    rank: "#10 in World's Best Places to Visit",
+    description:
+      "Simply setting foot in Japan's frenetic capital city is an experience. Known for its bustling streets and flashing neon signs, Tokyo has an electric energy and ample top attractions to discover. Foodies won't be let down by Tokyo's fresh sushi and hearty ramen (not to mention more Michelin-starred restaurants than any other city in the world). Shopaholics will find plenty of must-have designer products in Ginza, while those seeking a respite in nature can visit Shinjuku Gyoen or Yoyogi Park. Meanwhile, history buffs will appreciate Tokyo's centuries-old temples and shrines.",
+    images: [
+    ],
+  },
+  {
+    id: 11,
+    name: 'Phuket',
+    rank: "#11 in World's Best Places to Visit",
+    description:
+      "Located in southern Thailand, the island of Phuket offers something for everyone, especially budget-minded travelers. Activities like spa treatments and boat tours come with low price tags, as do accommodations, making this a cheap tropical vacation option. For stunning scenery, check out the limestone cliffs of Phang Nga Bay and lounge on Phuket's gorgeous white sand beaches (Freedom Beach and Bang Tao Beach are two popular destinations). Other top attractions include Wat Chalong Temple and the Big Buddha. Once the sun sets, hitch a ride on a tuk-tuk and take part in the island's lively nightlife scene. ",
+    images: [
+    ],
+  },
+  {
+    id: 12,
+    name: 'Costa Rica',
+    rank: "#12 in World's Best Places to Visit",
+    description:
+      "From volcanic mountains and verdant rainforests to tumbling waterfalls and miles of stunning shoreline, Costa Rica is a Central American gem. Explore the beaches along the Nicoya Peninsula, hike along Arenal Volcano and spot exotic wildlife (think: river turtles, otters and howler monkeys) in remote Tortuguero National Park. If you're looking for an adrenaline rush, go swimming next to some of the country's waterfalls or zip lining through its rainforests. Then, head back to an eco-luxury all-inclusive resort to unwind. Just make sure you plan a visit during Costa Rica's dry season, which falls between mid-December and April. ",
+    images: [
+    ],
+  },
+  {
+    id: 13,
+    name: 'South Island, New Zealand',
+    rank: "#13 in World's Best Places to Visit",
+    description:
+      "New Zealand's South Island brims with majestic landscapes at every turn, from dramatic mountains to spectacular fjords. Here, you can admire the mountains of Fiordland National Park from hiking trails or a boat on Milford Sound/Piopiotahi. At night, journey to the University of Canterbury's Mount John Observatory to gaze at the starry skies. You can also indulge your inner daredevil in Queenstown (a favorite destination among bungee jumpers), sample delicious sauvignon blanc wine in the Marlborough region or explore New Zealand's most accessible glaciers – Franz Josef and Fox Glacier – on the island's west coast.",
+    images: [
+    ],
+  },
+  {
+    id: 14,
+    name: 'Tahiti',
+    rank: "#14 in World's Best Places to Visit",
+    description:
+      "Travel to this island – the largest in French Polynesia – if you've been dreaming of a vacation spent lazing in a lavish overwater bungalow combined with experiencing an ancient culture. Beyond the posh resorts, Tahiti boasts black sand and golden beaches, a bustling capital (Papeete) and prime snorkeling and surfing conditions. If you're looking for more cultural activities, check out some of the island's temples, shop for Tahitian pearls at its traditional indoor markets or enjoy local performance art. To save money, opt to stay in a vacation rental – the island is home to plenty of cute bungalows and chic condos.",
+    images: [
+    ],
+  },
+  {
+    id: 15,
+    name: 'Banff',
+    rank: "#15 in World's Best Places to Visit",
+    description:
+      "An Alberta town full of acclaimed restaurants, breweries, boutiques and art galleries, Banff makes for an exciting vacation in every season. Vacationers can spend their days hiking, relaxing in hot springs and boating on scenic lakes. Banff's location within the Canadian Rockies also makes it easy for visitors to access Banff National Park, which boasts some of the world's most beautiful vistas. Inside the park, travelers can admire sweeping views of the Bow Valley from the Banff Gondola or while schussing the slopes at the park's three ski resorts.",
+    images: [
+    ],
+  },
+  {
+    id: 16,
+    name: 'Great Barrier Reef',
+    rank: "#16 in World's Best Places to Visit",
+    description:
+      "The globe's largest coral reef system – and one of the original Seven Natural Wonders of the World – touts one-of-a-kind scenery. At Australia's Great Barrier Reef, you'll find more than 600 islands and 1,500-plus species of fish. Though plenty of diving and snorkeling spots can be found along Queensland's coast, to escape the crowds, visit the Whitsunday Islands (which happen to have some of the world's best beaches). Also, save time for viewing the reef from above during a flightseeing excursion.",
+    images: [
+    ],
+  },
+  {
+    id: 17,
+    name: 'Amsterdam',
+    rank: "#17 in World's Best Places to Visit",
+    description:
+      "Famous museums, tulips, canal-lined streets, \"coffee shops\" and high-end boutiques await you in Amsterdam. Here, you can spend your days gazing at Vincent van Gogh paintings, relaxing in Vondelpark and shopping in The Nine Streets area. Immerse yourself in Amsterdam's street food scene by eating herring or Dutch fries, or satisfy your sweet tooth with stroopwafels. You can also do as the Dutch do and rent a bicycle to tour the city. If you plan on visiting in spring, don't miss the Keukenhof gardens, where you can view millions of colorful flowers. ",
+    images: [
+    ],
+  },
+  {
+    id: 18,
+    name: 'Barcelona',
+    rank: "#18 in World's Best Places to Visit",
+    description:
+      "This Spanish city is a feast for the eyes: Visitors can walk past medieval architecture in the Barri Gòtic, snap photos of the intricate Basílica de la Sagrada Família and marvel at more of Antoni Gaudí's whimsical creations in Park Güell. Meanwhile, Barceloneta beach and the Parc de la Ciutadella are perfect places to pass the time on a sunny day before checking out the restaurants and bars along Las Ramblas, which buzzes at all hours of the night. For travelers who want to see Barcelona from above, trek up Tibidabo or to the Bunkers del Carmel.",
+    images: [
+    ],
+  },
+  {
+    id: 19,
+    name: 'St. Lucia',
+    rank: "#19 in World's Best Places to Visit",
+    description:
+      "Dotted with luxurious boutique hotels and stunning mountainside resorts, this Caribbean destination is ideal for lovebirds and adrenaline junkies. Those in search of relaxation will find it on the island's unspoiled shorelines (specifically Reduit Beach and Anse Chastanet). Meanwhile, adventure seekers can test their limits climbing the Pitons or zip lining through the Chassin region's rainforest. The dry season, from December to April, is the most popular (and expensive) time to visit, but budget-conscious travelers can find superb weather and cheaper room rates if they arrive in May or June. ",
+    images: [
+    ],
+  },
+  {
+    id: 20,
+    name: 'Sydney',
+    rank: "#20 in World's Best Places to Visit",
+    description:
+      "Sydney offers more than just a dizzying array of famous landmarks, such as the Sydney Opera House, Mrs. Macquarie's Chair and the Sydney Harbour Bridge. This Australia metropolis boasts a warm, sunny climate that is ideal for relaxing or surfing at world-renowned beaches like Coogee, Bondi and Manly. Sydney also hosts several seasonal events, including concerts and food festivals. No visit would be complete without visiting museums like the Hyde Park Barracks and the Australian Museum to get an overview of the city's history and culture.",
+    images: [
+     ],
+  },
+  {
+    id: 21,
+    name: 'Dubai',
+    rank: "#21 in World's Best Places to Visit",
+    description:
+      "Stunning Persian Gulf views, heart-pumping activities and historical landmarks await you in Dubai. This Middle Eastern city is filled with some of the world's most notable and unique attractions, including the Dubai Mall, indoor Ski Dubai and Burj Khalifa, the tallest building on the planet. But the city still holds onto its heritage, as seen in the Bastakiya Quarter and the traditional Gold and Spice souks. When you need a break from the hustle and bustle of the city, head to a sandy shore like Jumeirah Public Beach, Sunset Beach or Al Mamzar Beach Park.",
+    images: [
+    ],
+  },
 ];
 
 // Modal Component
