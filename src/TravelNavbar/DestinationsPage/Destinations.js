@@ -185,7 +185,7 @@ const destinationsData = [
 ];
 
 // Modal Component
-const Modal = ({ show, onClose, images }) => {
+const Modal = ({ show, onClose, images, name }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   if (!show) return null;
@@ -205,22 +205,22 @@ const Modal = ({ show, onClose, images }) => {
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <button className="modal-close-button" onClick={onClose}>
+        <button className="modal-close-button" onClick={onClose} aria-label="Close Modal">
           &times;
         </button>
         {images.length > 1 && (
           <>
-            <button className="modal-prev-button" onClick={handlePrev}>
+            <button className="modal-prev-button" onClick={handlePrev} aria-label="Previous Image">
               &#10094;
             </button>
-            <button className="modal-next-button" onClick={handleNext}>
+            <button className="modal-next-button" onClick={handleNext} aria-label="Next Image">
               &#10095;
             </button>
           </>
         )}
         <img
           src={images[currentIndex] || '/images/placeholder.png'}
-          alt={`Destination Image ${currentIndex + 1}`}
+          alt={`${name} view ${currentIndex + 1}`}
           className="modal-image"
         />
       </div>
@@ -232,12 +232,14 @@ const Destinations = () => {
   const [modalData, setModalData] = useState({
     show: false,
     images: [],
+    name: '',
   });
 
-  const openModal = (images) => {
+  const openModal = (images, name) => {
     setModalData({
       show: true,
       images: images.length > 0 ? images : ['/images/placeholder.png'],
+      name: name,
     });
   };
 
@@ -245,6 +247,7 @@ const Destinations = () => {
     setModalData({
       show: false,
       images: [],
+      name: '',
     });
   };
 
@@ -273,9 +276,9 @@ const Destinations = () => {
             <div className="destination-image-container">
               <img
                 src={destination.images[0] || '/images/placeholder.png'}
-                alt={`${destination.name} Image`}
+                alt={destination.name}
                 className="destination-image"
-                onClick={() => openModal(destination.images)}
+                onClick={() => openModal(destination.images, destination.name)}
               />
             </div>
             <div className="destination-info">
@@ -288,7 +291,12 @@ const Destinations = () => {
       </div>
 
       {/* Image Modal */}
-      <Modal show={modalData.show} onClose={closeModal} images={modalData.images} />
+      <Modal
+        show={modalData.show}
+        onClose={closeModal}
+        images={modalData.images}
+        name={modalData.name}
+      />
     </div>
   );
 };

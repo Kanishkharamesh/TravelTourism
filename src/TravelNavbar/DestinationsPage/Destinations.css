@@ -14,6 +14,7 @@
   --shadow-color: rgba(0, 0, 0, 0.1);
   --border-radius: 8px;
   --transition-speed: 0.3s;
+  --button-size: 40px; /* Added for consistent button sizing */
 }
 
 /* Reset Margin and Padding */
@@ -159,6 +160,7 @@
   font-weight: 400;
   color: var(--text-color); /* Black */
   line-height: 1.5;
+  text-align: left; /* Ensures left alignment */
 }
 
 /* Modal Styles */
@@ -191,41 +193,48 @@
 .modal-prev-button,
 .modal-next-button {
   position: absolute;
-  background: rgba(255, 255, 255, 0.7);
+  width: var(--button-size);
+  height: var(--button-size);
+  background: var(--primary-color); /* Changed to bright orange */
   border: none;
   border-radius: 50%;
-  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  transition: background var(--transition-speed);
+  transition: background var(--transition-speed), transform var(--transition-speed);
 }
 
 .modal-close-button {
   top: 10px;
   right: 10px;
-  font-size: 24px;
+  font-size: 20px; /* Adjusted for better sizing */
+  color: white; /* Icon color for contrast */
 }
 
 .modal-close-button:hover {
-  background: rgba(255, 255, 255, 1);
+  background: darken(var(--primary-color), 10%); /* Darker shade on hover */
+}
+
+.modal-prev-button,
+.modal-next-button {
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px; /* Adjusted for consistency */
+  color: white; /* Icon color for contrast */
 }
 
 .modal-prev-button {
-  top: 50%;
-  left: -50px;
-  transform: translateY(-50%);
-  font-size: 24px;
+  left: 10px; /* Adjusted position for consistency */
 }
 
 .modal-next-button {
-  top: 50%;
-  right: -50px;
-  transform: translateY(-50%);
-  font-size: 24px;
+  right: 10px; /* Adjusted position for consistency */
 }
 
 .modal-prev-button:hover,
 .modal-next-button:hover {
-  background: rgba(255, 255, 255, 1);
+  background: darken(var(--primary-color), 10%); /* Darker shade on hover */
 }
 
 /* Responsive Design */
@@ -274,11 +283,10 @@
   }
 
   /* Adjust modal buttons for smaller screens */
-  .modal-prev-button {
-    left: 10px;
-  }
-
+  .modal-prev-button,
   .modal-next-button {
-    right: 10px;
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
   }
 }
