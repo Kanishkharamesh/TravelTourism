@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* CSS Variables (Ensure consistency with other CSS files) */
+:root {
+    --primary-color: #ff7e5f; /* Bright Orange */
+    --secondary-color: #feb47b; /* Light Orange */
+    --accent-color: #4b6cb7; /* Soft Blue */
+    --background-color: #f5f5f5;
+    --text-color: #333333;
+    --light-text-color: #777777;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+}
+
+/* Reset Margin and Padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Flights Page Container */
+.flights-page {
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    padding: 20px;
+    font-size: 16px;
+    color: var(--light-text-color);
+}
+
+.breadcrumb-link {
+    text-decoration: none;
+    color: var(--accent-color);
+}
+
+.current-page {
+    font-weight: bold;
+}
+
+/* Flights Container */
+.flights-container {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Search Box Styles */
+.search-box {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px var(--shadow-color);
+    padding: 20px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* Booking Form */
+.booking-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Outline Rectangle for Search Row */
+.search-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10px; /* Add padding for spacing inside the rectangle */
+    border: 1px solid lightgrey; /* Outline with light grey */
+    border-radius: var(--border-radius); /* Rounded corners */
+    margin: 10px 0; /* Margin to separate from other elements */
+    background-color: transparent; /* Ensure no fill color */
+}
+
+/* Search Column */
+.search-column {
+    flex: 1;
+    margin: 10px; /* Adjust this margin if needed */
+}
+
+/* Toggle Button */
+.toggle-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #ff7e5f, #feb47b); /* Gradient Background */
+    border-radius: 50%; /* Circle shape */
+    width: 30px; /* Smaller width of the circle */
+    height: 30px; /* Smaller height of the circle */
+    cursor: pointer;
+    transition: transform var(--transition-speed);
+    margin: 0 -20px; /* Margin for spacing between from and to */
+}
+
+.toggle-button:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Input and Dropdown Styles */
+.dropdown-input {
+    border: 1px solid var(--light-text-color);
+    border-radius: var(--border-radius);
+    padding: 10px;
+    background-color: #fff;
+    cursor: pointer;
+    position: relative;
+}
+
+.dropdown-input:hover {
+    border-color: var(--primary-color);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid var(--light-text-color);
+    border-radius: var(--border-radius);
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 100;
+}
+
+.dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Search Button */
+.search-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color var(--transition-speed);
+}
+
+.search-button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Discounts Section */
+.discounts-section {
+    margin-top: 20px;
+}
+
+.discounts-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.discount-column {
+    flex: 1;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid var(--light-text-color);
+    border-radius: var(--border-radius);
+    background-color: #f9f9f9;
+}
+
+/* Airport Search Input */
+.airport-search {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--light-text-color);
+    border-radius: var(--border-radius);
+    margin: 5px 0;
+}
+
+.airport-search:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+/* Date Picker Styles */
+.airport-search[type="date"] {
+    border: 2px solid var(--light-text-color);
+    border-radius: var(--border-radius);
+    padding: 10px;
+    background-color: white; /* Background color for the date picker */
+    color: var(--text-color); /* Text color */
+    transition: border-color var(--transition-speed);
+}
+
+.airport-search[type="date"]:hover {
+    border-color: var(--primary-color); /* Change border color on hover */
+}
+
+.airport-search[type="date"]:focus {
+    border-color: var(--primary-color); /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Custom Styles for Date Input */
+.airport-search[type="date"]::-webkit-calendar-picker-indicator {
+    background-color: var(--primary-color); /* Bright orange background */
+    border-radius: 50%; /* Rounded indicator */
+    padding: 5px; /* Padding inside the indicator */
+    cursor: pointer; /* Pointer cursor */
+}
+
+/* Change the appearance of the date picker indicator */
+.airport-search[type="date"]::-webkit-inner-spin-button,
+.airport-search[type="date"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Remove default spin buttons */
+    margin: 0; /* Remove margin */
+}
