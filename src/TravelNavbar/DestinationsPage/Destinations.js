@@ -603,17 +603,17 @@ const Modal = ({ show, onClose, images, name }) => {
   };
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <button className="modal-close-button" onClick={onClose} aria-label="Close Modal">
+    <div className="destination-modal-overlay" onClick={onClose}>
+      <div className="destination-modal-content" onClick={(e) => e.stopPropagation()}>
+        <button className="destination-modal-close-button" onClick={onClose} aria-label="Close Modal">
           &times;
         </button>
         {images.length > 1 && (
           <>
-            <button className="modal-prev-button" onClick={handlePrev} aria-label="Previous Image">
+            <button className="destination-modal-prev-button" onClick={handlePrev} aria-label="Previous Image">
               &#10094;
             </button>
-            <button className="modal-next-button" onClick={handleNext} aria-label="Next Image">
+            <button className="destination-modal-next-button" onClick={handleNext} aria-label="Next Image">
               &#10095;
             </button>
           </>
@@ -621,7 +621,7 @@ const Modal = ({ show, onClose, images, name }) => {
         <img
           src={images[currentIndex] || '/images/placeholder.png'}
           alt={`${name} view ${currentIndex + 1}`}
-          className="modal-image"
+          className="destination-modal-image"
         />
       </div>
     </div>
@@ -654,14 +654,15 @@ const Destinations = () => {
   return (
     <div className="destinations-page">
       {/* Breadcrumbs */}
-      <div className="breadcrumbs">
-        <Link to="/" className="breadcrumb-link">
-          Home
+      <div className="destination-breadcrumbs">
+        <Link to="/" className="destination-breadcrumb-link">
+          <b>Home</b>&nbsp;&nbsp;
         </Link>{' '}
-        &gt; <span className="current-page">Destinations</span>
+        &gt; <span className="destination-current-page">&nbsp;&nbsp;<b>Destinations</b></span>
       </div>
 
       {/* Page Heading */}
+      <br></br>
       <div className="destinations-heading">
         <h2 className="destinations-title">WORLD'S BEST PLACES TO VISIT</h2>
         <p className="destinations-subtitle">

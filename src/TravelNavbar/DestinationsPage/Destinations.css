@@ -35,25 +35,28 @@
 }
 
 /* Breadcrumbs */
-.breadcrumbs {
+.destination-breadcrumbs {
   max-width: 1200px;
-  margin: 80px auto 20px auto; /* Positioned below the navbar */
+  margin: 13px auto 20px auto;
   padding: 0 20px;
-  font-size: 14px;
-  color: var(--light-text-color);
+  margin-right: 917px;
+  color: var(--primary-color);
 }
 
-.breadcrumb-link {
+.destination-breadcrumb-link {
+  max-width: 1200px;
+  font-size: 22px;
   text-decoration: none;
   color: var(--primary-color);
   transition: color var(--transition-speed);
 }
 
-.breadcrumb-link:hover {
+.destination-breadcrumb-link:hover {
   color: var(--secondary-color);
 }
 
-.current-page {
+.destination-current-page {
+  font-size: 20px;
   color: var(--text-color);
 }
 
@@ -164,7 +167,7 @@
 }
 
 /* Modal Styles */
-.modal-overlay {
+.destination-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -177,21 +180,21 @@
   z-index: 1000;
 }
 
-.modal-content {
+.destination-modal-content {
   position: relative;
   max-width: 90%;
   max-height: 90%;
 }
 
-.modal-content img {
+.destination-modal-content img {
   width: 100%;
   height: auto;
   border-radius: var(--border-radius);
 }
 
-.modal-close-button,
-.modal-prev-button,
-.modal-next-button {
+.destination-modal-close-button,
+.destination-modal-prev-button,
+.destination-modal-next-button {
   position: absolute;
   width: var(--button-size);
   height: var(--button-size);
@@ -205,35 +208,35 @@
   transition: background var(--transition-speed), transform var(--transition-speed);
 }
 
-.modal-close-button {
+.destination-modal-close-button {
   top: 10px;
   right: 10px;
   font-size: 20px; /* Adjusted for better sizing */
   color: white; /* Icon color for contrast */
 }
 
-.modal-close-button:hover {
+.destination-modal-close-button:hover {
   background: darken(var(--primary-color), 10%); /* Darker shade on hover */
 }
 
-.modal-prev-button,
-.modal-next-button {
+.destination-modal-prev-button,
+.destination-modal-next-button {
   top: 50%;
   transform: translateY(-50%);
   font-size: 20px; /* Adjusted for consistency */
   color: white; /* Icon color for contrast */
 }
 
-.modal-prev-button {
+.destination-modal-prev-button {
   left: 10px; /* Adjusted position for consistency */
 }
 
-.modal-next-button {
+.destination-modal-next-button {
   right: 10px; /* Adjusted position for consistency */
 }
 
-.modal-prev-button:hover,
-.modal-next-button:hover {
+.destination-modal-prev-button:hover,
+.destination-modal-next-button:hover {
   background: darken(var(--primary-color), 10%); /* Darker shade on hover */
 }
 
@@ -283,8 +286,8 @@
   }
 
   /* Adjust modal buttons for smaller screens */
-  .modal-prev-button,
-  .modal-next-button {
+  .destination-modal-prev-button,
+  .destination-modal-next-button {
     width: 35px;
     height: 35px;
     font-size: 18px;

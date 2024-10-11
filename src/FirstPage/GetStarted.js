@@ -1,5 +1,5 @@
 // src/FirstPage/GetStarted.js
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import './GetStarted.css';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -14,108 +14,9 @@ import {
   FaTaxi,
   FaMoneyCheckAlt,
   FaShieldAlt,
-  FaExchangeAlt,
 } from 'react-icons/fa';
-import { IoMdArrowDropdown } from 'react-icons/io';
-
-const airportOptions = [
-  { code: 'DEL', name: 'Delhi Airport, India' },
-  { code: 'BOM', name: 'Mumbai Airport, India' },
-  { code: 'LHR', name: 'London Heathrow, UK' },
-  { code: 'BLR', name: 'Bengaluru International Airport, India' },
-  { code: 'MAA', name: 'Chennai Airport, India' },
-  { code: 'DXB', name: 'Dubai International, UAE' },
-  // Add more airports as needed
-];
 
 const GetStarted = () => {
-  const [tripType, setTripType] = useState('oneWay');
-  const [showReturnDate, setShowReturnDate] = useState(false);
-  const [travellers, setTravellers] = useState({
-    adults: 0,
-    children: 0,
-    infants: 0,
-    class: 'Economy',
-  });
-  const [fromAirport, setFromAirport] = useState('DEL');
-  const [toAirport, setToAirport] = useState('BLR');
-  const [departureDate, setDepartureDate] = useState('');
-  const [returnDate, setReturnDate] = useState('');
-  const [showTravellerDropdown, setShowTravellerDropdown] = useState(false);
-  const [showDeparturePicker, setShowDeparturePicker] = useState(false);
-  const [showReturnPicker, setShowReturnPicker] = useState(false);
-
-  const travellerRef = useRef();
-  const departureRef = useRef();
-  const returnRef = useRef();
-
-  useEffect(() => {
-    setShowReturnDate(tripType === 'roundTrip');
-    if (tripType !== 'roundTrip') {
-      setReturnDate('');
-    }
-  }, [tripType]);
-
-  // Close dropdowns when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (
-        travellerRef.current &&
-        !travellerRef.current.contains(event.target)
-      ) {
-        setShowTravellerDropdown(false);
-      }
-      if (
-        departureRef.current &&
-        !departureRef.current.contains(event.target)
-      ) {
-        setShowDeparturePicker(false);
-      }
-      if (returnRef.current && !returnRef.current.contains(event.target)) {
-        setShowReturnPicker(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
-
-  const handleTripTypeChange = (e) => {
-    const selectedTripType = e.target.value;
-    setTripType(selectedTripType);
-  };
-
-  const handleTravellerChange = (e) => {
-    const { name, value } = e.target;
-    setTravellers((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSwap = () => {
-    const temp = fromAirport;
-    setFromAirport(toAirport);
-    setToAirport(temp);
-  };
-
-  const handleApplyTravellers = () => {
-    setShowTravellerDropdown(false);
-  };
-
-  const formatDateDisplay = (dateStr) => {
-    if (!dateStr) return '';
-    const date = new Date(dateStr);
-    const day = date.getDate();
-    const month = date.toLocaleString('default', { month: 'short' });
-    const year = date.getFullYear().toString().slice(-2);
-    const weekday = date.toLocaleString('default', { weekday: 'long' });
-    return { day, month, year, weekday };
-  };
-
-  const departureDisplay = formatDateDisplay(departureDate);
-  const returnDisplay = formatDateDisplay(returnDate);
 
   return (
     <div className="travel-page">
@@ -220,7 +121,9 @@ const GetStarted = () => {
       {/* Main Content */}
       <div className="travel-main-content">
         <div className="travel-text-section">
+          <br></br>
           <p className="travel-subtitle">BEST DESTINATIONS AROUND THE WORLD</p>
+          <br></br>
           <h1 className="travel-title">
             Travel, enjoy and live a new and full life
           </h1>
@@ -269,7 +172,7 @@ const GetStarted = () => {
       </div>
 
       {/* Radio Button Box */}
-      <div className="travel-radio-box">
+      {/*<div className="travel-radio-box">
         <label className="travel-radio-label">
           <input
             type="radio"
@@ -300,242 +203,7 @@ const GetStarted = () => {
           />
           Multi-City
         </label>
-      </div>
-
-      {/* Booking Form */}
-      <div className="travel-booking-container">
-        <div className="travel-booking-form">
-          <div className="booking-row">
-            {/* From Section */}
-            <div className="booking-column">
-              <h3>From</h3>
-              <div className="booking-location-picker">
-                <strong className="city-name">
-                  {airportOptions.find((a) => a.code === fromAirport)?.code}{' '}
-                  {airportOptions.find((a) => a.code === fromAirport)?.name.split(',')[0]}
-                </strong>
-                <p className="airport-code">
-                  {fromAirport},{' '}
-                  {
-                    airportOptions.find((a) => a.code === fromAirport)?.name
-                  }
-                </p>
-                <select
-                  value={fromAirport}
-                  onChange={(e) => setFromAirport(e.target.value)}
-                  className="location-dropdown"
-                  aria-label="From Airport"
-                >
-                  {airportOptions.map((airport) => (
-                    <option key={airport.code} value={airport.code}>
-                      {airport.code} - {airport.name}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-
-            {/* Toggle Button */}
-            <div className="booking-column toggle-column">
-              <button
-                className="swap-button"
-                onClick={handleSwap}
-                aria-label="Swap From and To"
-              >
-                <FaExchangeAlt size={24} />
-              </button>
-            </div>
-
-            {/* To Section */}
-            <div className="booking-column">
-              <h3>To</h3>
-              <div className="booking-location-picker">
-                <strong className="city-name">
-                  {airportOptions.find((a) => a.code === toAirport)?.code}{' '}
-                  {airportOptions.find((a) => a.code === toAirport)?.name.split(',')[0]}
-                </strong>
-                <p className="airport-code">
-                  {toAirport},{' '}
-                  {
-                    airportOptions.find((a) => a.code === toAirport)?.name
-                  }
-                </p>
-                <select
-                  value={toAirport}
-                  onChange={(e) => setToAirport(e.target.value)}
-                  className="location-dropdown"
-                  aria-label="To Airport"
-                >
-                  {airportOptions.map((airport) => (
-                    <option key={airport.code} value={airport.code}>
-                      {airport.code} - {airport.name}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-
-            {/* Departure Date */}
-            <div className="booking-column" ref={departureRef}>
-              <h3>Departure</h3>
-              <div
-                className="date-picker-container"
-                onClick={() => setShowDeparturePicker(!showDeparturePicker)}
-              >
-                <IoMdArrowDropdown className="dropdown-icon" />
-                <div className="date-display">
-                  <span className="date-number">
-                    {departureDisplay.day || 'DD'}
-                  </span>
-                  <span className="date-month">
-                    {departureDisplay.month
-                      ? `${departureDisplay.month}'${departureDisplay.year}`
-                      : 'MMM\'YY'}
-                  </span>
-                </div>
-                <span className="day-info">
-                  {departureDisplay.weekday || 'Day'}
-                </span>
-              </div>
-              {showDeparturePicker && (
-                <input
-                  type="date"
-                  value={departureDate}
-                  onChange={(e) => setDepartureDate(e.target.value)}
-                  className="date-input"
-                />
-              )}
-            </div>
-
-            {/* Return Date (Only for Round Trip) */}
-            {showReturnDate && (
-              <div className="booking-column" ref={returnRef}>
-                <h3>Return</h3>
-                <div
-                  className="date-picker-container"
-                  onClick={() => setShowReturnPicker(!showReturnPicker)}
-                >
-                  <IoMdArrowDropdown className="dropdown-icon" />
-                  <div className="date-display">
-                    <span className="date-number">
-                      {returnDisplay.day || 'DD'}
-                    </span>
-                    <span className="date-month">
-                      {returnDisplay.month
-                        ? `${returnDisplay.month}'${returnDisplay.year}`
-                        : 'MMM\'YY'}
-                    </span>
-                  </div>
-                  <span className="day-info">
-                    {returnDisplay.weekday || 'Day'}
-                  </span>
-                  {returnDate && (
-                    <button
-                      className="cancel-return-btn"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setReturnDate('');
-                      }}
-                      aria-label="Cancel Return Date"
-                    >
-                      &times;
-                    </button>
-                  )}
-                </div>
-                {showReturnPicker && (
-                  <input
-                    type="date"
-                    value={returnDate}
-                    onChange={(e) => setReturnDate(e.target.value)}
-                    className="date-input"
-                  />
-                )}
-              </div>
-            )}
-
-            {/* Traveller and Class Selection */}
-            <div className="booking-column traveller-column" ref={travellerRef}>
-              <h3>Travellers & Class</h3>
-              <div
-                className="traveller-selector"
-                onClick={() => setShowTravellerDropdown(!showTravellerDropdown)}
-              >
-                <IoMdArrowDropdown className="dropdown-icon" />
-                <span className="traveller-text">
-                  {travellers.adults} Adult(s), {travellers.children} Child(ren), {travellers.infants} Infant(s) - {travellers.class}
-                </span>
-              </div>
-              {showTravellerDropdown && (
-                <div className="traveller-dropdown">
-                  <div className="traveller-section">
-                    <label htmlFor="adults">Adults</label>
-                    <input
-                      type="number"
-                      name="adults"
-                      id="adults"
-                      value={travellers.adults}
-                      onChange={handleTravellerChange}
-                      min="1"
-                    />
-                  </div>
-                  <div className="traveller-section">
-                    <label htmlFor="children">Children</label>
-                    <input
-                      type="number"
-                      name="children"
-                      id="children"
-                      value={travellers.children}
-                      onChange={handleTravellerChange}
-                      min="0"
-                    />
-                  </div>
-                  <div className="traveller-section">
-                    <label htmlFor="infants">Infants</label>
-                    <input
-                      type="number"
-                      name="infants"
-                      id="infants"
-                      value={travellers.infants}
-                      onChange={handleTravellerChange}
-                      min="0"
-                    />
-                  </div>
-                  <div className="class-section">
-                    <label htmlFor="class">Class</label>
-                    <select
-                      name="class"
-                      id="class"
-                      value={travellers.class}
-                      onChange={handleTravellerChange}
-                    >
-                      <option value="Economy">Economy</option>
-                      <option value="Premium Economy">Premium Economy</option>
-                      <option value="Business">Business</option>
-                      <option value="First">First Class</option>
-                    </select>
-                  </div>
-                  <button
-                    className="apply-travellers-btn"
-                    onClick={handleApplyTravellers}
-                  >
-                    Apply
-                  </button>
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Apply Button */}
-          <div className="apply-button-container">
-            <button className="apply-button">Apply</button>
-          </div>
-        </div>
-      </div>
-
-      {/* Get Started Button */}
-      <div className="get-started-button-container">
-        <button className="get-started-btn">Get Started</button>
-      </div>
+      </div>*/}
     </div>
   );
 };

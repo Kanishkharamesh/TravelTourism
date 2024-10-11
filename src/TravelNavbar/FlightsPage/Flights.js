@@ -76,94 +76,107 @@ const Flights = () => {
     return (
         <div className="flights-page">
             {/* Breadcrumbs */}
-            <div className="breadcrumbs">
-                <Link to="/" className="breadcrumb-link">
-                    Home
+            <br></br><br></br>
+            <div className="flight-breadcrumbs">
+                <Link to="/" className="flight-breadcrumb-link">
+                    <b>Home</b>&nbsp;&nbsp;
                 </Link>{' '}
-                &gt; <span className="current-page">Flights</span>
+                &gt; <span className="flight-current-page">&nbsp;&nbsp;<b>Flights</b></span>
             </div>
+
+            
 
             <div className="flights-container">
                 <div className="search-box">
                     <form onSubmit={handleSubmit}>
                         <h2>Search Flights</h2>
+                        <br></br>
                         <div className="booking-form">
                             <div className="search-row">
                                 {/* From */}
                                 <div className="search-column background-box">
                                     <label>From</label>
-                                    <div
-                                        className="dropdown-input"
-                                        onClick={() => setFromDropdownVisible(!isFromDropdownVisible)}
-                                    >
-                                        {formData.from}
-                                    </div>
-                                    {isFromDropdownVisible && (
-                                        <div className="dropdown-menu">
-                                            <input
-                                                type="text"
-                                                placeholder="Search Airports"
-                                                value={searchTermFrom}
-                                                onChange={(e) => setSearchTermFrom(e.target.value)}
-                                                className="airport-search"
-                                            />
-                                            {filteredAirportsFrom.map((airport, index) => (
-                                                <div
-                                                    key={index}
-                                                    className="dropdown-item"
-                                                    onClick={() => {
-                                                        setFormData((prevState) => ({
-                                                            ...prevState,
-                                                            from: airport.split(",")[0],
-                                                        }));
-                                                        setFromDropdownVisible(false);
-                                                    }}
-                                                >
-                                                    {airport}
-                                                </div>
-                                            ))}
+                                    <div className="dropdown-container">
+                                        <div
+                                            className="dropdown-input"
+                                            onClick={() => setFromDropdownVisible(!isFromDropdownVisible)}
+                                        >
+                                            {formData.from}
                                         </div>
-                                    )}
+                                        {isFromDropdownVisible && (
+                                            <div className="dropdown-menu">
+                                                <input
+                                                    type="text"
+                                                    placeholder="Search Airports"
+                                                    value={searchTermFrom}
+                                                    onChange={(e) => setSearchTermFrom(e.target.value)}
+                                                    className="airport-search"
+                                                />
+                                                {filteredAirportsFrom.map((airport, index) => (
+                                                    <div
+                                                        key={index}
+                                                        className="dropdown-item"
+                                                        onClick={() => {
+                                                            setFormData((prevState) => ({
+                                                                ...prevState,
+                                                                from: airport.split(",")[0],
+                                                            }));
+                                                            setFromDropdownVisible(false);
+                                                        }}
+                                                    >
+                                                        {airport}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
                                 </div>
 
-                                {/* To */}
-                                <div className="search-column background-box">
-                                    <label>To</label>
-                                    <div
-                                        className="dropdown-input"
-                                        onClick={() => setToDropdownVisible(!isToDropdownVisible)}
-                                    >
-                                        {formData.to}
-                                    </div>
-                                    {isToDropdownVisible && (
-                                        <div className="dropdown-menu">
-                                            <input
-                                                type="text"
-                                                placeholder="Search Airports"
-                                                value={searchTermTo}
-                                                onChange={(e) => setSearchTermTo(e.target.value)}
-                                                className="airport-search"
-                                            />
-                                            {filteredAirportsTo.map((airport, index) => (
-                                                <div
-                                                    key={index}
-                                                    className="dropdown-item"
-                                                    onClick={() => {
-                                                        setFormData((prevState) => ({
-                                                            ...prevState,
-                                                            to: airport.split(",")[0],
-                                                        }));
-                                                        setToDropdownVisible(false);
-                                                    }}
-                                                >
-                                                    {airport}
-                                                </div>
-                                            ))}
-                                        </div>
-                                    )}
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <div className='flight-toogle-btn'>
                                     <button type="button" className="toggle-button" onClick={handleToggle}>
                                         ↔️
                                     </button>
+                                </div>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                
+                                {/* To */}
+                                <div className="search-column background-box">
+                                    <label>To</label>
+                                    <div className="dropdown-container">
+                                        <div
+                                            className="dropdown-input"
+                                            onClick={() => setToDropdownVisible(!isToDropdownVisible)}
+                                        >
+                                            {formData.to}
+                                        </div>
+                                        {isToDropdownVisible && (
+                                            <div className="dropdown-menu">
+                                                <input
+                                                    type="text"
+                                                    placeholder="Search Airports"
+                                                    value={searchTermTo}
+                                                    onChange={(e) => setSearchTermTo(e.target.value)}
+                                                    className="airport-search"
+                                                />
+                                                {filteredAirportsTo.map((airport, index) => (
+                                                    <div
+                                                        key={index}
+                                                        className="dropdown-item"
+                                                        onClick={() => {
+                                                            setFormData((prevState) => ({
+                                                                ...prevState,
+                                                                to: airport.split(",")[0],
+                                                            }));
+                                                            setToDropdownVisible(false);
+                                                        }}
+                                                    >
+                                                        {airport}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
                                 </div>
 
                                 {/* Departure Date */}
@@ -210,6 +223,7 @@ const Flights = () => {
                         {/* Discounts Section */}
                         <div className="discounts-section">
                             <h2>Available Discounts</h2>
+                            <br></br>
                             <div className="discounts-row">
                                 <div className="discount-column">
                                     <label>Discount 1</label>
@@ -234,9 +248,11 @@ const Flights = () => {
                             </div>
                         </div>
 
+                        <br></br>
                         <button type="submit" className="search-button">
                             Search
                         </button>
+                        <br></br>
                     </form>
                 </div>
             </div>

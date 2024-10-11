@@ -18,7 +18,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+  }
 
 /* Flights Page Container */
 .flights-page {
@@ -29,19 +29,29 @@
 }
 
 /* Breadcrumbs */
-.breadcrumbs {
-    padding: 20px;
-    font-size: 16px;
-    color: var(--light-text-color);
+.flight-breadcrumbs {
+    max-width: 1200px;
+    margin: 13px auto 20px auto;
+    padding: 0 20px;
+    margin-right: 950px;
+    color: var(--primary-color);
 }
 
-.breadcrumb-link {
+.flight-breadcrumb-link {
+    max-width: 1200px;
+    font-size: 22px;
     text-decoration: none;
-    color: var(--accent-color);
+    color: var(--primary-color);
+    transition: color var(--transition-speed);
 }
 
-.current-page {
-    font-weight: bold;
+.flight-breadcrumb-link:hover {
+    color: var(--secondary-color);
+  }
+
+.flight-current-page {
+    font-size: 20px;
+    color: var(--text-color);
 }
 
 /* Flights Container */
@@ -59,7 +69,7 @@
     box-shadow: 0 4px 8px var(--shadow-color);
     padding: 20px;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1250px;
 }
 
 /* Booking Form */
@@ -87,6 +97,10 @@
 }
 
 /* Toggle Button */
+.flight-toogle-btn{
+    margin-top: 40px;
+}
+
 .toggle-button {
     display: flex;
     justify-content: center;
@@ -95,9 +109,11 @@
     border-radius: 50%; /* Circle shape */
     width: 30px; /* Smaller width of the circle */
     height: 30px; /* Smaller height of the circle */
+    padding-bottom: 2px;
+    font-weight: 10px;
     cursor: pointer;
     transition: transform var(--transition-speed);
-    margin: 0 -20px; /* Margin for spacing between from and to */
+    border: none;
 }
 
 .toggle-button:hover {
@@ -118,22 +134,36 @@
     border-color: var(--primary-color);
 }
 
+.dropdown-container {
+    position: relative;
+}
+
 .dropdown-menu {
     position: absolute;
-    top: 40px;
+    top: 100%; /* Align it below the input field */
     left: 0;
     right: 0;
     background-color: white;
     border: 1px solid var(--light-text-color);
     border-radius: var(--border-radius);
-    max-height: 200px;
+    max-height: 250px;
+    font-size: 12px;
     overflow-y: auto;
     z-index: 100;
+    margin-top: 5px;
+    padding: 10px; /* Add padding for better readability */
 }
 
 .dropdown-item {
     padding: 10px;
     cursor: pointer;
+    text-align: justify; /* Ensures the text is justified */
+}
+
+.dropdown-item::after {
+    content: ""; /* This helps justify the text properly */
+    display: inline-block;
+    width: 100%; 
 }
 
 .dropdown-item:hover {
