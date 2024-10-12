@@ -54,7 +54,6 @@
     color: var(--text-color);
 }
 
-/* Flights Container */
 .flights-container {
     padding: 40px;
     display: flex;
@@ -62,7 +61,6 @@
     align-items: center;
 }
 
-/* Search Box Styles */
 .search-box {
     background-color: white;
     border-radius: var(--border-radius);
@@ -72,49 +70,44 @@
     max-width: 1250px;
 }
 
-/* Increase width and height for Departure, Return, and Travellers & Class boxes */
 .search-column-background-box {
     flex: 1;
     margin: 10px;
-    padding: 15px; /* Increase padding for more space inside */
+    padding: 15px; 
     border: 1px solid var(--light-text-color);
     border-radius: var(--border-radius);
-    background-color: white; /* Ensure white background */
-    min-width: 200px; /* Set a minimum width */
-    min-height: 100px; /* Set a minimum height */
-    box-shadow: 0 4px 12px var(--shadow-color); /* Add a subtle shadow for better visibility */
-    font-size: 16px; /* Increase font size for readability */
-    transition: transform var(--transition-speed); /* Add smooth transition */
+    background-color: white; 
+    min-width: 200px; 
+    min-height: 100px;
+    box-shadow: 0 4px 12px var(--shadow-color); 
+    font-size: 16px; 
+    transition: transform var(--transition-speed); 
 }
 
-/* Make the boxes slightly grow when hovered */
 .search-column-background-box:hover {
     transform: scale(1.05);
 }
 
-/* Styling for the inputs inside the boxes */
 .search-column-background-box input, .search-column-background-box select {
     width: 100%;
-    padding: 12px; /* Increase padding inside the input fields */
+    padding: 12px; 
     border: 1px solid var(--light-text-color);
     border-radius: var(--border-radius);
-    font-size: 16px; /* Ensure input font size is consistent */
-    background-color: #f9f9f9; /* Light background color */
-    margin-top: 8px; /* Add margin between label and input */
+    font-size: 16px; 
+    background-color: #f9f9f9; 
+    margin-top: 8px;
 }
 
 .search-column-background-box input:focus, .search-column-background-box select:focus {
-    border-color: var(--primary-color); /* Highlight the input border when focused */
-    outline: none; /* Remove default outline */
+    border-color: var(--primary-color);
+    outline: none;
 }
 
-/* Booking Form */
 .booking-form {
     display: flex;
     flex-direction: column;
 }
 
-/* Outline Rectangle for Search Row */
 .search-row {
     display: flex;
     justify-content: space-between;
@@ -126,13 +119,11 @@
     background-color: transparent; /* Ensure no fill color */
 }
 
-/* Search Column */
 .search-column {
     flex: 1;
-    margin: 10px; /* Adjust this margin if needed */
+    margin: 10px; 
 }
 
-/* Toggle Button */
 .flight-toogle-btn{
     margin-top: 40px;
 }
@@ -153,10 +144,9 @@
 }
 
 .toggle-button:hover {
-    transform: scale(1.1); /* Slightly enlarge on hover */
+    transform: scale(1.1); 
 }
 
-/* Input and Dropdown Styles */
 .dropdown-input {
     border: 1px solid var(--light-text-color);
     border-radius: var(--border-radius);
@@ -176,7 +166,7 @@
 
 .dropdown-menu {
     position: absolute;
-    top: 100%; /* Align it below the input field */
+    top: 100%; 
     left: 0;
     right: 0;
     background-color: white;
