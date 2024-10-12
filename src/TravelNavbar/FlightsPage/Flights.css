@@ -72,6 +72,42 @@
     max-width: 1250px;
 }
 
+/* Increase width and height for Departure, Return, and Travellers & Class boxes */
+.search-column-background-box {
+    flex: 1;
+    margin: 10px;
+    padding: 15px; /* Increase padding for more space inside */
+    border: 1px solid var(--light-text-color);
+    border-radius: var(--border-radius);
+    background-color: white; /* Ensure white background */
+    min-width: 200px; /* Set a minimum width */
+    min-height: 100px; /* Set a minimum height */
+    box-shadow: 0 4px 12px var(--shadow-color); /* Add a subtle shadow for better visibility */
+    font-size: 16px; /* Increase font size for readability */
+    transition: transform var(--transition-speed); /* Add smooth transition */
+}
+
+/* Make the boxes slightly grow when hovered */
+.search-column-background-box:hover {
+    transform: scale(1.05);
+}
+
+/* Styling for the inputs inside the boxes */
+.search-column-background-box input, .search-column-background-box select {
+    width: 100%;
+    padding: 12px; /* Increase padding inside the input fields */
+    border: 1px solid var(--light-text-color);
+    border-radius: var(--border-radius);
+    font-size: 16px; /* Ensure input font size is consistent */
+    background-color: #f9f9f9; /* Light background color */
+    margin-top: 8px; /* Add margin between label and input */
+}
+
+.search-column-background-box input:focus, .search-column-background-box select:focus {
+    border-color: var(--primary-color); /* Highlight the input border when focused */
+    outline: none; /* Remove default outline */
+}
+
 /* Booking Form */
 .booking-form {
     display: flex;

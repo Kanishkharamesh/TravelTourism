@@ -180,8 +180,9 @@ const Flights = () => {
                                 </div>
 
                                 {/* Departure Date */}
-                                <div className="search-column background-box">
+                                <div className="search-column-background-box">
                                     <label>Departure</label>
+                                    <br></br>
                                     <input
                                         type="date"
                                         name="departureDate"
@@ -192,8 +193,9 @@ const Flights = () => {
                                 </div>
 
                                 {/* Return Date */}
-                                <div className="search-column background-box">
+                                <div className="search-column-background-box">
                                     <label>Return</label>
+                                    <br></br>
                                     <input
                                         type="date"
                                         name="returnDate"
@@ -203,7 +205,7 @@ const Flights = () => {
                                 </div>
 
                                 {/* Travellers & Class */}
-                                <div className="search-column background-box">
+                                <div className="search-column-background-box">
                                     <label>Travellers  & </label>
                                     <label>Class</label>
                                     <select
