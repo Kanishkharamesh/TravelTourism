@@ -36,13 +36,15 @@ const Hotels = () => {
             <div className="hotels-container">
                 {hotelsData.map((hotel) => (
                     <div className="hotel-item" key={hotel.id}>
+                        <Link to={`/hotels/${hotel.id}`}>
                         <img src={hotel.image} alt={hotel.city} className="hotel-image" />
                         <div className="hotel-info">
                             <h3 className="hotel-city">
-                                <Link to={`/hotels/${hotel.id}`}>{hotel.city}</Link>
+                                {hotel.city}
                             </h3>
                             <p className="hotel-description">{hotel.description}</p>
                         </div>
+                        </Link>
                     </div>
                 ))}
             </div>

@@ -6,7 +6,6 @@ import Destinations from './TravelNavbar/DestinationsPage/Destinations';
 import Flights from './TravelNavbar/FlightsPage/Flights';
 import Hotels from './TravelNavbar/HotelsPage/Hotels';
 import Villas from './TravelNavbar/VillasPage/Villas';
-import HotelDetails from './TravelNavbar/HotelsPage/HotelDetails';
 
 function App() {
   return (
@@ -17,7 +16,6 @@ function App() {
           <Route path="/destinations" element={<Destinations />} />
           <Route path="/flights" element={<Flights />} />
           <Route path="/hotels" element={<Hotels/>}/>
-          <Route path="/hotels/:id" element={<HotelDetails />} />
           <Route path="/villas" element={<Villas/>}/>
         </Routes>
       </BrowserRouter>

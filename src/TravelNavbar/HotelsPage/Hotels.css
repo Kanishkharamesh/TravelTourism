@@ -52,6 +52,7 @@
     padding: 20px;
     max-width: 1200px; /* Ensures a maximum of 4 items per row */
     margin: 0 auto; /* Centers the grid container */
+    border: none;
 }
 
 
@@ -81,6 +82,7 @@
 .hotel-info {
     margin-top: 10px;
     text-align: left; /* Ensure the text remains left-aligned */
+    text-decoration: none;
 }
 
 .hotel-city {

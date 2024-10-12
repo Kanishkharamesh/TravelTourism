@@ -162,7 +162,7 @@ const Flights = () => {
                                     </div>
                                 </div>
 
-                                {/* Departure Date */}
+                                {/* Departure Date */}                                                                                                                                                                                                                                                                                                                                                                                                                                              
                                 <div className="search-column-background-box">
                                     <label>Departure</label>
                                     <br />
