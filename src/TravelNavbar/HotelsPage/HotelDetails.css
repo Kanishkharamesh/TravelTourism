@@ -1,0 +1,121 @@
+.hotel-page-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .hotel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .hotel-header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .hotel-sort button {
+    margin-right: 10px;
+    padding: 8px 12px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    cursor: pointer;
+  }
+  
+  .hotel-sort button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .hotel-content {
+    display: flex;
+  }
+  
+  .hotel-filters {
+    width: 250px;
+    margin-right: 20px;
+  }
+  
+  .hotel-filters h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .hotel-filters ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .hotel-filters li {
+    margin-bottom: 10px;
+  }
+  
+  .hotel-list {
+    flex: 1;
+  }
+  
+  .hotel-card {
+    display: flex;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+  
+  .hotel-card img {
+    width: 200px;
+    height: 150px;
+    margin-right: 20px;
+    border-radius: 8px;
+  }
+  
+  .hotel-info h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .hotel-info p {
+    margin-bottom: 6px;
+    color: #555;
+  }
+  
+  .hotel-rating {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .hotel-rating span {
+    margin-right: 5px;
+    font-size: 16px;
+  }
+  
+  .hotel-price {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #e74c3c;
+  }
+  
+  .hotel-price span:first-child {
+    text-decoration: line-through;
+    color: #999;
+    margin-right: 10px;
+  }
+  
+  .book-now-btn {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 4px;
+  }
+  
+  .book-now-btn:hover {
+    background-color: #ff5a50;
+  }
+  

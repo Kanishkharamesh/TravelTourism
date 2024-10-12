@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './Hotels.css';
+import { useParams } from 'react-router-dom';
+import './HotelDetails.css'; // Create styles for this component
 
 const hotelsData = [
-    { id:'goa',city: "Goa", image: "https://www.mistay.in/travel-blog/content/images/2020/06/cover-goa-mistay-hotel-rooms.jpg", description: "Hotels, Budget Hotels, Resorts, Best Hotels, North Goa, Villas" },
-    { id:'ooty',city: "Ooty", image: "https://static-blog.treebo.com/wp-content/uploads/2022/12/Summers_unsplash.jpg", description: "Hotels, Resorts, Cottages, Budget Hotels, Homestay" },
+    { id: "goa", city: "Goa", image: "https://www.mistay.in/travel-blog/content/images/2020/06/cover-goa-mistay-hotel-rooms.jpg", description: "Hotels, Budget Hotels, Resorts, Best Hotels, North Goa, Villas" },
+    { id: "ooty", city: "Ooty", image: "https://static-blog.treebo.com/wp-content/uploads/2022/12/Summers_unsplash.jpg", description: "Hotels, Resorts, Cottages, Budget Hotels, Homestay" },
     { id:'jaipur',city: "Jaipur", image: "https://cdn.odysseytraveller.com/app/uploads/2020/02/Jal-Mahal.jpg", description: "Hotels, Resorts, Budget Hotels, Best Hotels, Near Railway Station" },
     { id:'singapore',city: "Singapore", image: "https://images.hdqwalls.com/wallpapers/singapore-skyscrapers-marina-bay-sands-evening-4k-es.jpg", description: "Hotels, 5 Star Hotels, Little India, Orchard Road, Hostels, Hotels in Sentosa" },
     { id:'phuket',city: "Phuket", image: "https://a.cdn-hotels.com/gdcs/production109/d1280/8a00a6e3-e4e9-46ba-9a82-36154eaf29ea.jpg", description: "Hotels, Resorts, Budget Hotels, Beachfront Properties" },
@@ -21,33 +21,23 @@ const hotelsData = [
     { id:'maldives',city: "Maldives", image: "https://www.saiiresorts.com/wp-content/uploads/sites/170/2021/03/SLM-masthead-1-3000x2200-1-scaled.jpg", description: "Hotels, 3 Star Hotels, Resorts, 5 Star Hotels, 4 Star Hotels, Hotels in Male" }
 ];
 
-const Hotels = () => {
-    return (
-        <div className="hotels-page">
-            {/* Breadcrumbs */}
-            <br /><br />
-            <div className="hotels-breadcrumbs">
-                <Link to="/" className="hotels-breadcrumb-link">
-                    <b>Home</b>&nbsp;&nbsp;
-                </Link>{' '}
-                &gt; <span className="hotels-current-page">&nbsp;&nbsp;<b>Hotels</b></span>
-            </div>
+const HotelDetails = () => {
+    const { id } = useParams();
+    const hotel = hotelsData.find(hotel => hotel.id === id);
 
-            <div className="hotels-container">
-                {hotelsData.map((hotel) => (
-                    <div className="hotel-item" key={hotel.id}>
-                        <img src={hotel.image} alt={hotel.city} className="hotel-image" />
-                        <div className="hotel-info">
-                            <h3 className="hotel-city">
-                                <Link to={`/hotels/${hotel.id}`}>{hotel.city}</Link>
-                            </h3>
-                            <p className="hotel-description">{hotel.description}</p>
-                        </div>
-                    </div>
-                ))}
+    if (!hotel) {
+        return <div>Hotel not found!</div>;
+    }
+
+    return (
+        <div className="hotel-details-page">
+            <img src={hotel.image} alt={hotel.city} className="hotel-detail-image" />
+            <div className="hotel-detail-info">
+                <h1>{hotel.city}</h1>
+                <p>{hotel.description}</p>
             </div>
         </div>
     );
 };
 
-export default Hotels;
+export default HotelDetails;
