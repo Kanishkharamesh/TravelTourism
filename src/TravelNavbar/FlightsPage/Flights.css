@@ -13,14 +13,12 @@
     --transition-speed: 0.3s;
 }
 
-/* Reset Margin and Padding */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
 
-/* Flights Page Container */
 .flights-page {
     width: 100%;
     min-height: 100vh;
@@ -33,7 +31,7 @@
     max-width: 1200px;
     margin: 13px auto 20px auto;
     padding: 0 20px;
-    margin-right: 950px;
+    margin-right: 1070px;
     color: var(--primary-color);
 }
 

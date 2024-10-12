@@ -132,13 +132,13 @@ const Flights = () => {
                                     </div>
                                 </div>
 
-                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;
                                 <div className='flight-toogle-btn'>
                                     <button type="button" className="toggle-button" onClick={handleToggle}>
                                         ↔️
                                     </button>
                                 </div>
-                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;
                                 
                                 {/* To */}
                                 <div className="search-column background-box">
