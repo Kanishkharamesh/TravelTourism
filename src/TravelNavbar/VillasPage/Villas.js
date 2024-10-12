@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import './Villas.css';
 
-const villas = [
+const villasData = [
   {
     id:"goa",
     name: "Goa",
@@ -57,6 +57,24 @@ const villas = [
     image: "https://nomadsofindia.com/wp-content/uploads/2022/06/Jibhi-Tirthan-Valley-1024x768.jpg",
     description: "Homestays - Villas & Apts",
   },
+  {
+    id:"bangalore",
+    name: "Bangalore",
+    image: "https://www.thetripsuggest.com/wp-content/uploads/2022/09/Untitled-design-70.jpg",
+    description: "Homestays - Villas & Apts",
+  },
+  {
+    id:"dehradun",
+    name: "Dehradun",
+    image: "https://images.pexels.com/photos/984993/pexels-photo-984993.jpeg?auto=compress",
+    description: "Homestays - Villas & Apts",
+  },
+  {
+    id:"pondicherry",
+    name: "Pondicherry",
+    image: "https://mysimplesojourn.com/wp-content/uploads/2019/04/Matrimandir-Auroville.jpg",
+    description: "Homestays - Villas & Apts",
+  },
 ];
 
 const Villas = () => {
@@ -73,18 +91,21 @@ const Villas = () => {
   
         {/* Villas List */}
         <div className="villas-container">
-          <div className="villas-grid">
-            {villas.map((villa, index) => (
-              <div className="villas-card" key={index}>
+           {villasData.map((villa) => (
+            <div className="villas-item" key={villa.id}>
+            <Link to={`/villas/${villa.id}`} className="villas-link">
                 <img src={villa.image} alt={villa.name} className="villas-image" />
-                <h3>{villa.name}</h3>
-                <p>{villa.description}</p>
-              </div>
-            ))}
-          </div>
+                <div className="villas-info">
+                                <h3 className="villas-city">
+                                    {villa.name}
+                                </h3>
+                                <p className="villas-description">{villa.description}</p>
+                            </div>
+                        </Link>
+                    </div>
+                ))}
+            </div>
         </div>
-      </div>
     );
 };
-
 export default Villas;

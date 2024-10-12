@@ -17,58 +17,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif; /* Apply Poppins font globally */
 }
 
-/* Grid Layout for Villas - Set to 3 columns */
-.villas-grid { 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Fixed 3 columns */
-    gap: 20px;
-    padding: 20px;
-    max-width: 1200px; /* Ensures a maximum of 3 items per row */
-    margin: 0 auto; /* Centers the grid container */
-    border: none;
-}
-
-/* Individual Villa Card */
-.villas-card {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Ensure text is left-aligned */
-    border: 1px solid #ddd;
-    padding: 15px;
-    background-color: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out;
-}
-
-/* Hover Effect on Card */
-.villas-card:hover {
-    transform: scale(1.05);
-}
-
-/* Image Styles */
-.villas-image {
-    width: 100%;
-    height: 200px; /* Adjust this height to your preference */
-    object-fit: cover; /* Ensures the image fits within the given dimensions without distortion */
-    border-radius: 10px;
-}
-
-/* Title Styles */
-.villas-card h3 {
-    margin: 0;
-    font-size: 18px;
-}
-
-/* Description Styles */
-.villas-card p {
-    margin: 0;
-    font-size: 14px;
-    color: var(--light-text-color);
-}
 
 /* Breadcrumbs */
 .villas-breadcrumbs {
@@ -95,3 +45,70 @@
     font-size: 20px;
     color: var(--text-color);
 }
+
+
+.villas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Makes the grid responsive */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px; /* Ensures a maximum of 4 items per row */
+    margin: 0 auto; /* Centers the grid container */
+    border: none;
+}
+
+.villas-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Ensure text is left-aligned */
+    border: 1px solid #ddd;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.villas-item:hover {
+    transform: scale(1.05);
+}
+
+.villas-link {
+    text-decoration: none; /* Removes underline from the link */
+    color: inherit; /* Inherits the text color from parent elements */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.villas-link:hover {
+    /* Optional: You can add hover effects specific to the link if needed */
+    /* For example, change text color or add an underline */
+}
+
+.villas-image {
+    width: 100%;
+    height: 200px; /* Adjust this height to your preference */
+    object-fit: cover; /* Ensures the image fits within the given dimensions without distortion */
+    border-radius: 10px;
+}
+
+.villas-info {
+    margin-top: 10px;
+    text-align: left; /* Ensure the text remains left-aligned */
+    /* Removed text-decoration: none; since it's now handled by .hotel-link */
+}
+
+.villas-name {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.villas-description {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    word-wrap: break-word; /* Ensures long text breaks into multiple lines */
+}
+
