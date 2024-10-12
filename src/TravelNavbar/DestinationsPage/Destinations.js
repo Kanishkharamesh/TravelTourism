@@ -662,7 +662,6 @@ const Destinations = () => {
       </div>
 
       {/* Page Heading */}
-      <br></br>
       <div className="destinations-heading">
         <h2 className="destinations-title">WORLD'S BEST PLACES TO VISIT</h2>
         <p className="destinations-subtitle">

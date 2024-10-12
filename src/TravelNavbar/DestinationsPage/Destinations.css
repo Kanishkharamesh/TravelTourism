@@ -1,9 +1,7 @@
-/* src/DestinationsPage/Destinations.css */
-
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-/* CSS Variables (Ensure consistency with other CSS files) */
+/* CSS Variables */
 :root {
   --primary-color: #ff7e5f; /* Bright Orange */
   --secondary-color: #feb47b; /* Light Orange */
@@ -14,7 +12,7 @@
   --shadow-color: rgba(0, 0, 0, 0.1);
   --border-radius: 8px;
   --transition-speed: 0.3s;
-  --button-size: 40px; /* Added for consistent button sizing */
+  --button-size: 40px;
 }
 
 /* Reset Margin and Padding */
@@ -30,7 +28,7 @@
   min-height: 100vh;
   font-family: 'Poppins', sans-serif;
   background-color: var(--background-color);
-  padding-top: 80px; /* Adjust to account for fixed navbar */
+  padding-top: 50px;
   padding-bottom: 40px;
 }
 
@@ -39,12 +37,11 @@
   max-width: 1200px;
   margin: 13px auto 20px auto;
   padding: 0 20px;
-  margin-right: 920px;
+  margin-left: -305px;
   color: var(--primary-color);
 }
 
 .destination-breadcrumb-link {
-  max-width: 1200px;
   font-size: 22px;
   text-decoration: none;
   color: var(--primary-color);
@@ -68,102 +65,92 @@
 }
 
 .destinations-title {
-  font-size: 32px; /* Big font */
+  font-size: 32px;
   font-weight: 700;
-  color: var(--primary-color); /* Bright orange */
+  color: var(--primary-color);
   text-transform: uppercase;
   margin-bottom: 20px;
   text-align: left;
 }
 
 .destinations-subtitle {
-  font-size: 18px; /* Medium size */
+  font-size: 16px; /* Reduced font size */
   font-weight: 400;
-  color: var(--text-color); /* Black */
+  color: var(--text-color);
   text-align: left;
   line-height: 1.6;
 }
 
 /* Destinations Cards Container */
 .destinations-cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three cards per row */
+  gap: 20px;
+  padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 30px;
 }
 
-/* Destination Card */
+/* Destination Card Styling (similar to villas-item) */
 .destination-card {
-  background: white;
-  border-radius: var(--border-radius);
-  box-shadow: 0 4px 12px var(--shadow-color);
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid #ddd;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: var(--border-radius);
   overflow: hidden;
-  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  transition: transform var(--transition-speed);
+  height: auto; /* Auto height to ensure all text fits */
 }
 
 .destination-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px var(--shadow-color);
+  transform: scale(1.05);
 }
 
-/* Image Container */
+/* Image Section */
 .destination-image-container {
-  position: relative;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  height: 200px; /* Fixed image height */
   overflow: hidden;
 }
 
 .destination-image {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-bottom-left-radius: var(--border-radius);
-  border-bottom-right-radius: var(--border-radius);
-  cursor: pointer;
-  transition: transform var(--transition-speed);
+  border-radius: var(--border-radius);
 }
 
-.destination-image:hover {
-  transform: scale(1.05);
-}
-
-/* Destination Info */
+/* Info Section */
 .destination-info {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  margin-top: 10px;
+  text-align: left;
 }
 
 .destination-name {
-  font-size: 24px; /* Big font */
-  font-weight: 600;
-  color: var(--primary-color); /* Bright orange */
-  margin-bottom: 10px;
-  text-transform: capitalize;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 5px 0;
+  color: var(--primary-color);
 }
 
 .destination-rank {
-  font-size: 16px; /* Semi-bold, smaller than title */
+  font-size: 14px;
   font-weight: 600;
-  color: var(--text-color); /* Black */
-  margin-bottom: 15px;
+  color: var(--text-color);
+  margin-bottom: 10px;
 }
 
+/* Description Section: Reduced font size and justified text */
 .destination-description {
-  font-size: 14px; /* Smaller size */
-  font-weight: 400;
-  color: var(--text-color); /* Black */
-  line-height: 1.5;
-  text-align: left; /* Ensures left alignment */
+  font-size: 0.8rem; /* Reduced font size */
+  color: var(--light-text-color);
+  line-height: 1.4;
+  word-wrap: break-word;
+  text-align: justify; /* Justified text */
+  overflow: visible;
 }
 
 /* Modal Styles */
@@ -198,7 +185,7 @@
   position: absolute;
   width: var(--button-size);
   height: var(--button-size);
-  background: var(--primary-color); /* Changed to bright orange */
+  background: var(--primary-color);
   border: none;
   border-radius: 50%;
   display: flex;
@@ -211,48 +198,48 @@
 .destination-modal-close-button {
   top: 10px;
   right: 10px;
-  font-size: 20px; /* Adjusted for better sizing */
-  color: white; /* Icon color for contrast */
+  font-size: 20px;
+  color: white;
 }
 
 .destination-modal-close-button:hover {
-  background: darken(var(--primary-color), 10%); /* Darker shade on hover */
+  background: darken(var(--primary-color), 10%);
 }
 
 .destination-modal-prev-button,
 .destination-modal-next-button {
   top: 50%;
   transform: translateY(-50%);
-  font-size: 20px; /* Adjusted for consistency */
-  color: white; /* Icon color for contrast */
+  font-size: 20px;
+  color: white;
 }
 
 .destination-modal-prev-button {
-  left: 10px; /* Adjusted position for consistency */
+  left: 10px;
 }
 
 .destination-modal-next-button {
-  right: 10px; /* Adjusted position for consistency */
+  right: 10px;
 }
 
 .destination-modal-prev-button:hover,
 .destination-modal-next-button:hover {
-  background: darken(var(--primary-color), 10%); /* Darker shade on hover */
+  background: darken(var(--primary-color), 10%);
 }
 
 /* Responsive Design */
 @media (max-width: 1200px) {
-  .destinations-cards-container {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 25px;
-  }
-
   .destinations-title {
     font-size: 28px;
   }
 
   .destinations-subtitle {
-    font-size: 16px;
+    font-size: 14px; /* Reduced font size for smaller screens */
+  }
+
+  /* Adjust grid for medium screens */
+  .destinations-cards-container {
+    grid-template-columns: repeat(2, 1fr); /* Two cards per row */
   }
 }
 
@@ -262,34 +249,26 @@
   }
 
   .destinations-subtitle {
-    font-size: 14px;
+    font-size: 12px; /* Reduced font size for smaller screens */
   }
 
+  /* Adjust grid for smaller screens */
+  .destinations-cards-container {
+    grid-template-columns: 1fr; /* One card per row */
+  }
+
+  /* Stack image and info vertically */
   .destination-card {
     flex-direction: column;
   }
 
+  .destination-image-container {
+    width: 100%;
+    height: 200px;
+  }
+
   .destination-info {
+    width: 100%;
     padding: 15px;
-  }
-
-  .destination-name {
-    font-size: 20px;
-  }
-
-  .destination-rank {
-    font-size: 14px;
-  }
-
-  .destination-description {
-    font-size: 13px;
-  }
-
-  /* Adjust modal buttons for smaller screens */
-  .destination-modal-prev-button,
-  .destination-modal-next-button {
-    width: 35px;
-    height: 35px;
-    font-size: 18px;
   }
 }
