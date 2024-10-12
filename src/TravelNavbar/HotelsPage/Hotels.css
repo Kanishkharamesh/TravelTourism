@@ -24,13 +24,13 @@
     max-width: 1200px;
     margin: 13px auto 20px auto;
     padding: 0 20px;
-    margin-right: 970px; /*to allow proper centering */
+    margin-right: 990px; /*to allow proper centering */
     color: var(--primary-color);
 }
 
 .hotels-breadcrumb-link {
     max-width: 1200px;
-    font-size: 25px;
+    font-size: 22px;
     text-decoration: none;
     color: var(--primary-color);
     transition: color var(--transition-speed);
@@ -41,7 +41,7 @@
 }
 
 .hotels-current-page {
-    font-size: 25px;
+    font-size: 20px;
     color: var(--text-color);
 }
 
