@@ -35,7 +35,7 @@ const Flights = () => {
         departureDate: '',
         returnDate: '',
         travellers: 1,
-        classType: 'Economy',
+        classType: '',
     });
 
     const [isFromDropdownVisible, setFromDropdownVisible] = useState(false);
@@ -213,6 +213,7 @@ const Flights = () => {
                                         value={formData.classType}
                                         onChange={handleInputChange}
                                     >
+                                        {/*<option value="Economy">....</option>*/}
                                         <option value="Economy">Economy</option>
                                         <option value="Premium Economy">Premium Economy</option>
                                         <option value="Business">Business</option>
