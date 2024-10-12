@@ -665,10 +665,13 @@ const Destinations = () => {
       <div className="destinations-heading">
         <h2 className="destinations-title">WORLD'S BEST PLACES TO VISIT</h2>
         <p className="destinations-subtitle">
-          With a world full of fascinating travel destinations, choosing the perfect vacation spot can present a challenge. That's why TravelPie used expert opinions, reader votes and current trends – and evaluated sights, cultures, scenic beauty, food options and more – to compile this list of the world's best places to visit. Use these recommendations to craft your travel bucket list, and cast your vote below to help us determine next year's ranking.
+          With a world full of fascinating travel destinations, choosing the perfect vacation spot can present a challenge. 
+          That's why TravelPie used expert opinions, reader votes and current trends – and evaluated sights, cultures, scenic beauty, 
+          food options and more – to compile this list of the world's best places to visit. Use these recommendations to craft your travel 
+          bucket list, and cast your vote below to help us determine next year's ranking.
         </p>
       </div>
-
+      
       {/* Destinations Cards */}
       <div className="destinations-cards-container">
         {destinationsData.map((destination) => (
