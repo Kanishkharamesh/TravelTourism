@@ -6,26 +6,7 @@ import { Link } from 'react-router-dom';
 const airportLocations = [
     "Delhi (DEL), Indira Gandhi International Airport",
     "Mumbai (BOM), Chhatrapati Shivaji International Airport",
-    "Bangalore (BLR), Kempegowda International Airport",
-    "Chennai (MAA), Chennai International Airport",
-    "Kolkata (CCU), Netaji Subhas Chandra Bose International Airport",
-    "Hyderabad (HYD), Rajiv Gandhi International Airport",
-    "Ahmedabad (AMD), Sardar Vallabhbhai Patel International Airport",
-    "Pune (PNQ), Pune Airport",
-    "Goa (GOI), Goa International Airport",
-    "Jaipur (JAI), Jaipur International Airport",
-    "Kochi (COK), Cochin International Airport",
-    "Lucknow (LKO), Chaudhary Charan Singh International Airport",
-    "Bhubaneswar (BBS), Biju Patnaik International Airport",
-    "Coimbatore (CJB), Coimbatore International Airport",
-    "Mangalore (IXE), Mangalore International Airport",
-    "Vadodara (BDQ), Vadodara Airport",
-    "Surat (STV), Surat Airport",
-    "Patna (PAT), Jay Prakash Narayan International Airport",
-    "Ranchi (IXR), Birsa Munda Airport",
-    "Dehradun (DED), Jolly Grant Airport",
-    "Srinagar (SXR), Sheikh ul-Alam International Airport",
-    // Add more airports up to 100 locations...
+    // Add more airports...
 ];
 
 const Flights = () => {
@@ -36,10 +17,14 @@ const Flights = () => {
         returnDate: '',
         travellers: 1,
         classType: '',
+        adults: 1,
+        children: 0,
+        infants: 0,
     });
 
     const [isFromDropdownVisible, setFromDropdownVisible] = useState(false);
     const [isToDropdownVisible, setToDropdownVisible] = useState(false);
+    const [isTravellersDropdownVisible, setTravellersDropdownVisible] = useState(false);
     const [searchTermFrom, setSearchTermFrom] = useState('');
     const [searchTermTo, setSearchTermTo] = useState('');
 
@@ -75,8 +60,7 @@ const Flights = () => {
 
     return (
         <div className="flights-page">
-            {/* Breadcrumbs */}
-            <br></br><br></br>
+            <br /><br />
             <div className="flight-breadcrumbs">
                 <Link to="/" className="flight-breadcrumb-link">
                     <b>Home</b>&nbsp;&nbsp;
@@ -84,13 +68,11 @@ const Flights = () => {
                 &gt; <span className="flight-current-page">&nbsp;&nbsp;<b>Flights</b></span>
             </div>
 
-            
-
             <div className="flights-container">
                 <div className="search-box">
                     <form onSubmit={handleSubmit}>
                         <h2>Search Flights</h2>
-                        <br></br>
+                        <br />
                         <div className="booking-form">
                             <div className="search-row">
                                 {/* From */}
@@ -133,13 +115,14 @@ const Flights = () => {
                                 </div>
 
                                 &nbsp;&nbsp;
-                                <div className='flight-toogle-btn'>
+                                <div className='flight-toggle-btn'>
+                                    <br></br><br></br>
                                     <button type="button" className="toggle-button" onClick={handleToggle}>
                                         ↔️
                                     </button>
                                 </div>
                                 &nbsp;&nbsp;
-                                
+
                                 {/* To */}
                                 <div className="search-column background-box">
                                     <label>To</label>
@@ -182,7 +165,7 @@ const Flights = () => {
                                 {/* Departure Date */}
                                 <div className="search-column-background-box">
                                     <label>Departure</label>
-                                    <br></br>
+                                    <br />
                                     <input
                                         type="date"
                                         name="departureDate"
@@ -195,7 +178,7 @@ const Flights = () => {
                                 {/* Return Date */}
                                 <div className="search-column-background-box">
                                     <label>Return</label>
-                                    <br></br>
+                                    <br />
                                     <input
                                         type="date"
                                         name="returnDate"
@@ -205,20 +188,64 @@ const Flights = () => {
                                 </div>
 
                                 {/* Travellers & Class */}
-                                <div className="search-column-background-box">
-                                    <label>Travellers  & </label>
-                                    <label>Class</label>
-                                    <select
-                                        name="classType"
-                                        value={formData.classType}
-                                        onChange={handleInputChange}
+                                <div className="search-column-background-box travellers-class-dropdown">
+                                    <label>Travellers & Class</label>
+                                    <div
+                                        className="dropdown-input"
+                                        onClick={() => setTravellersDropdownVisible(!isTravellersDropdownVisible)}
                                     >
-                                        {/*<option value="Economy">....</option>*/}
-                                        <option value="Economy">Economy</option>
-                                        <option value="Premium Economy">Premium Economy</option>
-                                        <option value="Business">Business</option>
-                                        <option value="First Class">First Class</option>
-                                    </select>
+                                        {`${formData.adults} Adult(s), ${formData.children} Child(ren), ${formData.infants} Infant(s), ${formData.classType}`}
+                                    </div>
+                                    {isTravellersDropdownVisible && (
+                                        <div className="travellers-dropdown-menu">
+                                            <div className="travellers-options">
+                                                <label>Adults</label>
+                                                <input
+                                                    type="number"
+                                                    name="adults"
+                                                    min="1"
+                                                    max="10"
+                                                    value={formData.adults}
+                                                    onChange={handleInputChange}
+                                                />
+                                            </div>
+                                            <div className="travellers-options">
+                                                <label>Children</label>
+                                                <input
+                                                    type="number"
+                                                    name="children"
+                                                    min="0"
+                                                    max="5"
+                                                    value={formData.children}
+                                                    onChange={handleInputChange}
+                                                />
+                                            </div>
+                                            <div className="travellers-options">
+                                                <label>Infants</label>
+                                                <input
+                                                    type="number"
+                                                    name="infants"
+                                                    min="0"
+                                                    max="3"
+                                                    value={formData.infants}
+                                                    onChange={handleInputChange}
+                                                />
+                                            </div>
+                                            <div className="travellers-options">
+                                                <label>Class</label>
+                                                <select
+                                                    name="classType"
+                                                    value={formData.classType}
+                                                    onChange={handleInputChange}
+                                                >
+                                                    <option value="Economy">Economy</option>
+                                                    <option value="Premium Economy">Premium Economy</option>
+                                                    <option value="Business">Business</option>
+                                                    <option value="First Class">First Class</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>
