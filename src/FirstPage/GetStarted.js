@@ -55,7 +55,7 @@ const GetStarted = () => {
                 <FaHotel className="nav-icon" aria-label="Hotels Icon" />
                 Hotels
               </a>
-              <a href="/homestays" className="travel-nav-link">
+              <a href="/villas" className="travel-nav-link">
                 <FaHome
                   className="nav-icon"
                   aria-label="Homestays & Villas Icon"

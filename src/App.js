@@ -3,7 +3,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import GetStarted from './FirstPage/GetStarted';
 import Destinations from './TravelNavbar/DestinationsPage/Destinations';
-import Flights from './TravelNavbar/FlightsPage/Flights'
+import Flights from './TravelNavbar/FlightsPage/Flights';
+import Hotels from './TravelNavbar/HotelsPage/Hotels';
+import Villas from './TravelNavbar/VillasPage/Villas';
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
           <Route path='/' element={<GetStarted/>}/>
           <Route path="/destinations" element={<Destinations />} />
           <Route path="/flights" element={<Flights />} />
+          <Route path="/hotels" element={<Hotels/>}/>
+          <Route path="/villas" element={<Villas/>}/>
         </Routes>
       </BrowserRouter>
     </div>
