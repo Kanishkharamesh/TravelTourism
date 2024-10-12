@@ -17,14 +17,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+}
 
-  /* Breadcrumbs */
+/* Breadcrumbs */
 .hotels-breadcrumbs {
     max-width: 1200px;
     margin: 13px auto 20px auto;
     padding: 0 20px;
-    margin-right: 970px;
+    margin-right: 970px; /*to allow proper centering */
     color: var(--primary-color);
 }
 
@@ -38,7 +38,7 @@
 
 .hotels-breadcrumb-link:hover {
     color: var(--secondary-color);
-  }
+}
 
 .hotels-current-page {
     font-size: 25px;
@@ -54,7 +54,6 @@
     margin: 0 auto; /* Centers the grid container */
     border: none;
 }
-
 
 .hotel-item {
     display: flex;
@@ -72,6 +71,19 @@
     transform: scale(1.05);
 }
 
+.hotel-link {
+    text-decoration: none; /* Removes underline from the link */
+    color: inherit; /* Inherits the text color from parent elements */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.hotel-link:hover {
+    /* Optional: You can add hover effects specific to the link if needed */
+    /* For example, change text color or add an underline */
+}
+
 .hotel-image {
     width: 100%;
     height: 200px; /* Adjust this height to your preference */
@@ -82,7 +94,7 @@
 .hotel-info {
     margin-top: 10px;
     text-align: left; /* Ensure the text remains left-aligned */
-    text-decoration: none;
+    /* Removed text-decoration: none; since it's now handled by .hotel-link */
 }
 
 .hotel-city {
