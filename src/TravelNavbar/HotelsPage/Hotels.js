@@ -16,7 +16,7 @@ const hotelsData = [
     { id:'bali',city: "Bali", image: "https://www.holidify.com/images/bgImages/BALI.jpg", description: "Hotels, Resorts, 5 Star Hotels, Budget Hotels, Villas In Bali, Beachfront Properties" },
     { id:'bangalore',city: "Bangalore", image: "https://www.kiwi.com/tips/wp-content/uploads/2023/05/india-karnataka-bangalore-aerial-scaled.jpg", description: "Hotels, Budget Hotels, Resorts, Near Airport, Guhantara Resort" },
     { id:'shimla',city: "Shimla", image: "https://www.clubmahindra.com/blog/media/section_images/shuttersto-026b0fa609daf35.jpg", description: "Hotels, Budget Hotels, Best Hotels, Resorts, Near Mall Road" },
-    { id:'dubai',city: "Dubai", image: "https://i.pinimg.com/736x/57/f5/f5/57f5f5e17fd898db66d157efd2614267.jpg", description: "Hotels, Budget Hotels, 5 Star Hotels, Apart-Hotels, Homestays" },
+    { id:'dubai',city: "Dubai", image: "https://pyt-blogs.imgix.net/2020/05/david-rodrigo-kZ1zThg6G40-unsplash-1.jpg?auto=format&ixlib=php-3.3.0", description: "Hotels, Budget Hotels, 5 Star Hotels, Apart-Hotels, Homestays" },
     { id:'pattaya',city: "Pattaya", image: "https://www.thatbangkoklife.com/wp-content/uploads/2019/09/things-to-do-in-pattaya5.jpg", description: "Hotels, Budget Hotels, 5 Star Hotels, Resorts, Central Pattaya, Beachfront Properties" },
     { id:'maldives',city: "Maldives", image: "https://www.saiiresorts.com/wp-content/uploads/sites/170/2021/03/SLM-masthead-1-3000x2200-1-scaled.jpg", description: "Hotels, 3 Star Hotels, Resorts, 5 Star Hotels, 4 Star Hotels, Hotels in Male" }
 ];
